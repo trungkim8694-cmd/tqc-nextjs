@@ -17,29 +17,29 @@ export default function ContactPage() {
     const formData = new FormData(form);
 
     // DÁN URL APP SCRIPT CỦA BẠN VÀO ĐÂY
-    const webAppUrl = "https://script.google.com/macros/s/AKfycbx4uGLe-M9I9u8bjjTivCqn_vVVJ9oa4rtAlHKBaCm4DBVutRmd5DpdvqfqCSiNNfEO/exec";
+    const webAppUrl = process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL;
+    if (!webAppUrl) {
+    console.error("Google Script URL is not defined");
+    return;
+    }
 
     try {
-      // Vì Apps Script nhận dữ liệu dạng GET/POST không theo chuẩn JSON,
-      // nên ta dùng URLSearchParams
-      const plainFormData = Object.fromEntries(formData.entries());
-      const formDataEncoded = new URLSearchParams();
-      Object.keys(plainFormData).forEach(key => formDataEncoded.append(key, plainFormData[key]));
+    const response = await fetch(webAppUrl, {
+      method: 'POST',
+      // Gửi trực tiếp FormData, không dùng URLSearchParams nếu có file
+      body: formData, 
+    });
 
-      await fetch(webAppUrl, {
-        method: "POST",
-        body: formDataEncoded
-      });
-
-      setSubmitted(true);
-      form.reset();
-    } catch (error) {
-      alert("エラーが発生しました。もう一度お試しください。");
-      console.error(error);
-    } finally {
-      setLoading(false);
+    if (response.ok) {
+      alert("送信完了しました！"); // Gửi thành công
+    } else {
+      alert("エラーが発生しました。"); // Lỗi
     }
+  } catch (error) {
+    console.error("Error:", error);
+    alert("エラーが発生しました。");
   }
+};
 
   return (
     <div className="bg-white min-h-screen text-gray-900">
