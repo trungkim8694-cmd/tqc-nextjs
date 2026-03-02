@@ -1,4 +1,3 @@
-// app/contact/page.tsx
 "use client";
 
 import React, { useState } from 'react';
@@ -8,42 +7,44 @@ export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  // --- HÀM XỬ LÝ GỬI FORM VỀ GOOGLE SHEET ---
+  // --- HÀM XỬ LÝ GỬI FORM VỀ API ROUTE NỘI BỘ ---
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setLoading(true);
     
     const form = event.currentTarget;
     const formData = new FormData(form);
-
-    // DÁN URL APP SCRIPT CỦA BẠN VÀO ĐÂY
-    const webAppUrl = process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL;
-    if (!webAppUrl) {
-    console.error("Google Script URL is not defined");
-    return;
-    }
+    
+    // Chuyển FormData thành JSON để gửi qua API Route
+    const data = Object.fromEntries(formData.entries());
 
     try {
-    const response = await fetch(webAppUrl, {
-      method: 'POST',
-      // Gửi trực tiếp FormData, không dùng URLSearchParams nếu có file
-      body: formData, 
-    });
+      // GỬI TỚI API ROUTE CỦA BẠN (proxy)
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data), 
+      });
 
-    if (response.ok) {
-      alert("送信完了しました！"); // Gửi thành công
-    } else {
-      alert("エラーが発生しました。"); // Lỗi
+      if (response.ok) {
+        setSubmitted(true); // Hiển thị thông báo thành công
+        form.reset();
+      } else {
+        alert("送信に失敗しました。時間をおいて再度お試しください。");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("通信エラーが発生しました。");
+    } finally {
+      setLoading(false);
     }
-  } catch (error) {
-    console.error("Error:", error);
-    alert("エラーが発生しました。");
-  }
-};
+  };
 
   return (
     <div className="bg-white min-h-screen text-gray-900">
-      {/* --- HERO SECTION --- */}
+      {/* ... Hero Section giữ nguyên ... */}
       <div className="bg-slate-900 text-white py-20 px-6 text-center">
         <h1 className="text-4xl md:text-5xl font-extrabold tracking-tighter">
           CONTACT US
@@ -54,7 +55,7 @@ export default function ContactPage() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 py-16 grid md:grid-cols-2 gap-12">
-        {/* --- LEFT: COMPANY PROFILE --- */}
+        {/* ... Left: Company Profile giữ nguyên ... */}
         <div>
           <h2 className="text-xl font-bold mb-8 flex items-center text-gray-950">
             <span className="w-1.5 h-7 bg-red-600 mr-3 rounded"></span>
@@ -66,7 +67,7 @@ export default function ContactPage() {
               <Image src="/company-building.jpg" alt="Building" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
             </div>
             <div className="border rounded-lg overflow-hidden h-40 relative">
-              <Image src="/company-team.jpg" alt="Team" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
+              <Image src="/company-team.jpg" alt="Team" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" priority/>
             </div>
           </div>
 
@@ -82,18 +83,18 @@ export default function ContactPage() {
           </div>
         </div>
 
-        {/* --- RIGHT: INQUIRY FORM --- */}
+        {/* --- RIGHT: INQUIRY FORM (Cập nhật xử lý) --- */}
         <div className="bg-gray-50 p-8 rounded-2xl border border-gray-100 shadow-sm">
           <h3 className="text-2xl font-bold mb-8 text-gray-950">INQUIRY FORM</h3>
           
           {submitted ? (
             <div className="text-center py-10 bg-white rounded-lg border border-green-200">
               <p className="text-green-600 text-lg font-bold">お問い合わせありがとうございます！</p>
-              <p className="text-gray-600 mt-2">ご入力いただいたメールアドレスへ確認メールを送信しました。</p>
+              <p className="text-gray-600 mt-2">担当者より折り返しご連絡いたします。</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Lưu ý: name="Name", name="Email",... phải trùng với tên cột trong Sheet */}
+              {/* name="..." phải trùng với tên cột trong Sheet */}
               <div>
                 <label className="block text-sm font-medium mb-1.5">USER NAME / お名前</label>
                 <input type="text" name="Name" required className="w-full p-3 border rounded-lg" />
@@ -107,10 +108,10 @@ export default function ContactPage() {
               <div>
                 <label className="block text-sm font-medium mb-1.5">SUBJECT / 件名</label>
                 <select name="Subject" className="w-full p-3 border rounded-lg bg-white">
-                  <option>T-Homes (不動産)</option>
-                  <option>人材紹介</option>
-                  <option>B2B調達</option>
-                  <option>その他</option>
+                  <option value="T-Homes (不動産)">T-Homes (不動産)</option>
+                  <option value="人材紹介">人材紹介</option>
+                  <option value="B2B調達">B2B調達</option>
+                  <option value="その他">その他</option>
                 </select>
               </div>
 
