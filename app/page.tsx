@@ -159,6 +159,7 @@ export default function TQCHomepage() {
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" // Thêm thuộc tính này
               className="object-cover"
+              loading="eager"
             />
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-sm rounded-full w-32 h-32 flex flex-col items-center justify-center text-center shadow-lg p-4">
               <span className="text-gray-950 font-bold text-sm tracking-tight">不動産<br/>サービス</span>
