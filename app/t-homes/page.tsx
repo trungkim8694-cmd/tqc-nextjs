@@ -2,7 +2,7 @@
 "use client"; // BẮT BUỘC: Biến thành client component để dùng useEffect
 
 import React, { useEffect } from 'react';
-import { ClipboardCheck, Users, ShieldCheck, Building2, Wrench, BarChart3, Sofa, GraduationCap, Play } from 'lucide-react';
+import { ClipboardCheck, Users, ShieldCheck, Building2, Wrench, BarChart3, Sofa, GraduationCap } from 'lucide-react';
 
 export default function THomesPage() {
   

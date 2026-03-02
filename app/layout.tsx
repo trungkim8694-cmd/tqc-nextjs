@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Link from 'next/link';
-import { Phone, Mail, Facebook, Music2, Menu } from 'lucide-react';
+import { Phone, Mail, Facebook, Music2 } from 'lucide-react';
 import MobileMenu from '@/components/MobileMenu'; // Đảm bảo bạn đã tạo file component này
 import Image from 'next/image';
 

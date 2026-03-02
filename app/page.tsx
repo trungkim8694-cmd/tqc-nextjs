@@ -6,8 +6,7 @@ import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 // Thêm Image từ next/image để tối ưu hình ảnh
 import Image from 'next/image';
 // Thêm icon mới: UserPlus, Building2, TrendingUp, Flag, Quote
-import { Phone, Mail, Facebook, Music2, Home, Users, Zap, Menu, ChevronLeft, ChevronRight, Flag, UserPlus, Building2, TrendingUp } from 'lucide-react';
-import Link from 'next/link';
+import { Home, Users, Zap, ChevronLeft, ChevronRight, Flag, UserPlus, Building2, TrendingUp } from 'lucide-react';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -206,7 +205,7 @@ export default function TQCHomepage() {
                 
                 {/* Nội dung */}
                 <div className="text-center mt-12">
-                  <p className="text-gray-700 text-sm leading-relaxed mb-6 italic">"{testimonial.text}"</p>
+                  <p className="text-gray-700 text-sm leading-relaxed mb-6 italic">&quot;{testimonial.text}&quot;</p>
                   <h4 className="text-lg font-bold text-gray-950">{testimonial.name}</h4>
                   <p className="text-sm text-yellow-600 font-medium">{testimonial.role}</p>
                 </div>
