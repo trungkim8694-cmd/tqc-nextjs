@@ -23,10 +23,10 @@ export default function MobileMenu() {
             <li><Link href="/t-homes" onClick={() => setIsOpen(false)}>T-HOMES 不動産</Link></li>
             <li><Link href="/human-resource" onClick={() => setIsOpen(false)}>人材</Link></li>
             <li><Link href="/b2b-supply" onClick={() => setIsOpen(false)}>B2B調達</Link></li>
+            <li><Link href="/contact" onClick={() => setIsOpen(false)}>CONTACT</Link></li>
             <li className="text-red-600 border-t pt-4">
               <a href="https://aka-pla.com" target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)}>日本-ベトナム架け橋</a>
             </li>
-            <li><Link href="/contact" onClick={() => setIsOpen(false)}>CONTACT</Link></li>
           </ul>
         </div>
       )}
