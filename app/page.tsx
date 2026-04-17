@@ -1,39 +1,48 @@
 "use client";
 
-import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 // Thêm Image từ next/image để tối ưu hình ảnh
-import Image from 'next/image';
+import Image from "next/image";
 // Thêm icon mới: UserPlus, Building2, TrendingUp, Flag, Quote
-import { Home, Users, Zap, ChevronLeft, ChevronRight, Flag, UserPlus, Building2, TrendingUp } from 'lucide-react';
+import {
+  Home,
+  Users,
+  Zap,
+  ChevronLeft,
+  ChevronRight,
+  Flag,
+  UserPlus,
+  Building2,
+  TrendingUp,
+} from "lucide-react";
 
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 export default function TQCHomepage() {
-  
   const slides = [
     {
       id: 1,
-      image: "/hero-1.jpg", 
+      image: "/hero-1.jpg",
       title: "外国人向け不動産サービス",
-      subTitle: "日本での賃貸・売買物件探しをトータルサポート"
+      subTitle: "日本での賃貸・売買物件探しをトータルサポート",
     },
     {
       id: 2,
       image: "/hero-2.jpg",
-      title: "ベトナム人Source供給・人材紹介",
-      subTitle: "優秀なベトナム人財と日本企業を繋ぐパートナー"
+      // title: "ベトナム人Source供給・人材紹介",
+      // subTitle: "優秀なベトナム人財と日本企業を繋ぐパートナー"
     },
     {
       id: 3,
       image: "/hero-3.jpg",
       title: "日越B2Bサプライチェーン構築",
-      subTitle: "ベトナム製造業とのマッチング・購買代行サービス"
-    }
+      subTitle: "ベトナム製造業とのマッチング・購買代行サービス",
+    },
   ];
 
   const testimonials = [
@@ -41,31 +50,40 @@ export default function TQCHomepage() {
       name: "Nguyễn .... V",
       role: "留学生",
       avatar: "/avatar-1.jpg",
-      text: "迅速なレスポンスで、急な引っ越しもスムーズでした。「急な転勤で早急に物件を探していたのですが、問い合わせ後の返信が非常に速く、内見から契約まであっという間でした。こちらの無理な要望にも柔軟に対応していただき、本当に感謝しています。サポート体制も万全で、信頼できる不動産会社さんです。」"
+      text: "迅速なレスポンスで、急な引っ越しもスムーズでした。「急な転勤で早急に物件を探していたのですが、問い合わせ後の返信が非常に速く、内見から契約まであっという間でした。こちらの無理な要望にも柔軟に対応していただき、本当に感謝しています。サポート体制も万全で、信頼できる不動産会社さんです。」",
     },
     {
       name: "Trần ... C",
       role: "Web Designer",
       avatar: "/avatar-2.jpg",
-      text: "人生の一度の大きな買い物を安心してお任せできました。「不動産購入という大きな決断でしたが、T-homesさんの専門的な知識と迅速な対応のおかげで、安心して進めることができました。物件のメリットだけでなく、注意点も正直に説明してくれたのが信頼の決め手でした。日本での家探しに不安がある方には、自信を持ってT-homesさんをおすすめします。」"
+      text: "人生の一度の大きな買い物を安心してお任せできました。「不動産購入という大きな決断でしたが、T-homesさんの専門的な知識と迅速な対応のおかげで、安心して進めることができました。物件のメリットだけでなく、注意点も正直に説明してくれたのが信頼の決め手でした。日本での家探しに不安がある方には、自信を持ってT-homesさんをおすすめします。」",
     },
     {
       name: "Hà ... T",
       role: "正社員",
       avatar: "/avatar-3.jpg",
-      text: "迅速なレスポンスで、急な引っ越しもスムーズでした。「急な転勤で早急に物件を探していたのですが、問い合わせ後の返信が非常に速く、内見から契約まであっという間でした。こちらの無理な要望にも柔軟に対応していただき、本当に感謝しています。サポート体制も万全で、信頼できる不動産会社さんです。」"
-    }
+      text: "迅速なレスポンスで、急な引っ越しもスムーズでした。「急な転勤で早急に物件を探していたのですが、問い合わせ後の返信が非常に速く、内見から契約まであっという間でした。こちらの無理な要望にも柔軟に対応していただき、本当に感謝しています。サポート体制も万全で、信頼できる不動産会社さんです。」",
+    },
   ];
 
   return (
     <div className="min-h-screen bg-white font-sans text-gray-800">
       {/* --- SEO METADATA --- */}
       <title>TQC株式会社 | 外国人不動産・ベトナム人材・日越B2B調達</title>
-      <meta name="description" content="TQC株式会社は、日本在住の外国人向け不動産仲介、優秀なベトナム人材紹介、そして日越B2Bサプライチェーン構築・購買代行を提供します。" />
+      <meta
+        name="description"
+        content="TQC株式会社は、日本在住の外国人向け不動産仲介、優秀なベトナム人材紹介、そして日越B2Bサプライチェーン構築・購買代行を提供します。"
+      />
 
       {/* --- HERO SECTION --- */}
       <section className="relative h-[500px] md:h-[600px] w-full">
-        <Swiper modules={[Autoplay, Pagination, Navigation]} autoplay={{ delay: 5000 }} pagination={{ clickable: true }} navigation={{ nextEl: '.next-btn', prevEl: '.prev-btn' }} className="h-full">
+        <Swiper
+          modules={[Autoplay, Pagination, Navigation]}
+          autoplay={{ delay: 5000 }}
+          pagination={{ clickable: true }}
+          navigation={{ nextEl: ".next-btn", prevEl: ".prev-btn" }}
+          className="h-full"
+        >
           {slides.map((slide) => (
             <SwiperSlide key={slide.id}>
               <div className="relative h-full w-full">
@@ -73,23 +91,31 @@ export default function TQCHomepage() {
                   src={slide.image}
                   alt={slide.title}
                   fill
-                  priority 
+                  priority
                   className="object-cover brightness-50"
                 />
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 z-10">
-                  <h1 className="text-3xl md:text-6xl font-extrabold text-yellow-500 mb-6 max-w-4xl tracking-tight">{slide.title}</h1>
-                  <p className="text-white text-lg md:text-2xl font-light tracking-widest">{slide.subTitle}</p>
+                  <h1 className="text-3xl md:text-6xl font-extrabold text-yellow-500 mb-6 max-w-4xl tracking-tight">
+                    {slide.title}
+                  </h1>
+                  <p className="text-white text-lg md:text-2xl font-light tracking-widest">
+                    {slide.subTitle}
+                  </p>
                 </div>
               </div>
             </SwiperSlide>
           ))}
-          <button className="prev-btn absolute left-4 top-1/2 -translate-y-1/2 z-30 text-white/50 hover:text-white"><ChevronLeft size={50}/></button>
-          <button className="next-btn absolute right-4 top-1/2 -translate-y-1/2 z-30 text-white/50 hover:text-white"><ChevronRight size={50}/></button>
+          <button className="prev-btn absolute left-4 top-1/2 -translate-y-1/2 z-30 text-white/50 hover:text-white">
+            <ChevronLeft size={50} />
+          </button>
+          <button className="next-btn absolute right-4 top-1/2 -translate-y-1/2 z-30 text-white/50 hover:text-white">
+            <ChevronRight size={50} />
+          </button>
         </Swiper>
       </section>
 
       {/* --- SERVICES (SEO FOCUS) --- */}
-      <section className="py-20 px-4 md:px-20 bg-gray-50">
+      {/* <section className="py-20 px-4 md:px-20 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-16 border-b-2 border-yellow-500 w-fit mx-auto pb-2">事業内容</h2>
           
@@ -117,10 +143,10 @@ export default function TQCHomepage() {
             </article>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* --- CUSTOMER STATISTICS SECTION --- */}
-      <section className="py-20 px-4 md:px-20 bg-white">
+      {/* <section className="py-20 px-4 md:px-20 bg-white">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-16 border-b-2 border-yellow-500 w-fit mx-auto pb-2">私たちのお客様</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
@@ -147,7 +173,7 @@ export default function TQCHomepage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* --- PROPERTY SERVICES SECTION --- */}
       <section className="py-20 px-4 md:px-20 bg-gray-50">
@@ -162,21 +188,30 @@ export default function TQCHomepage() {
               loading="eager"
             />
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-sm rounded-full w-32 h-32 flex flex-col items-center justify-center text-center shadow-lg p-4">
-              <span className="text-gray-950 font-bold text-sm tracking-tight">不動産<br/>サービス</span>
+              <span className="text-gray-950 font-bold text-sm tracking-tight">
+                不動産
+                <br />
+                サービス
+              </span>
             </div>
           </div>
           <div className="grid grid-cols-2 gap-6">
             {[
-              { icon: Home, title: '賃貸不動産' },
-              { icon: UserPlus, title: '引っ越しお手伝い' },
-              { icon: Building2, title: '不動産の売買' },
-              { icon: TrendingUp, title: '不動産投資コンサルティング' },
+              { icon: Home, title: "賃貸不動産" },
+              { icon: UserPlus, title: "引っ越しお手伝い" },
+              { icon: Building2, title: "不動産の売買" },
+              { icon: TrendingUp, title: "不動産投資コンサルティング" },
             ].map((service, index) => (
-              <div key={index} className="bg-white border border-gray-100 rounded-3xl p-8 shadow-sm hover:shadow-xl transition-shadow duration-300 flex flex-col items-center text-center">
+              <div
+                key={index}
+                className="bg-white border border-gray-100 rounded-3xl p-8 shadow-sm hover:shadow-xl transition-shadow duration-300 flex flex-col items-center text-center"
+              >
                 <div className="bg-gray-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
                   <service.icon className="w-8 h-8 text-gray-700" />
                 </div>
-                <h3 className="text-lg font-bold text-gray-950">{service.title}</h3>
+                <h3 className="text-lg font-bold text-gray-950">
+                  {service.title}
+                </h3>
               </div>
             ))}
           </div>
@@ -186,29 +221,40 @@ export default function TQCHomepage() {
       {/* --- TESTIMONIALS SECTION (New) --- */}
       <section className="py-20 px-4 md:px-20 bg-white">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-16 border-b-2 border-yellow-500 w-fit mx-auto pb-2">顧客レビュー</h2>
-          
+          <h2 className="text-3xl font-bold text-center mb-16 border-b-2 border-yellow-500 w-fit mx-auto pb-2">
+            顧客レビュー
+          </h2>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-gray-50 p-8 rounded-3xl shadow-sm relative">
+              <div
+                key={index}
+                className="bg-gray-50 p-8 rounded-3xl shadow-sm relative"
+              >
                 {/* Ảnh đại diện */}
                 <div className="absolute -top-12 left-1/2 -translate-x-1/2">
                   <div className="relative w-24 h-24 rounded-full overflow-hidden border-4 border-white shadow-md">
-                    <Image 
-                      src={testimonial.avatar} 
-                      alt={testimonial.name} 
-                      fill 
+                    <Image
+                      src={testimonial.avatar}
+                      alt={testimonial.name}
+                      fill
                       sizes="96px"
                       className="object-cover"
                     />
                   </div>
                 </div>
-                
+
                 {/* Nội dung */}
                 <div className="text-center mt-12">
-                  <p className="text-gray-700 text-sm leading-relaxed mb-6 italic">&quot;{testimonial.text}&quot;</p>
-                  <h4 className="text-lg font-bold text-gray-950">{testimonial.name}</h4>
-                  <p className="text-sm text-yellow-600 font-medium">{testimonial.role}</p>
+                  <p className="text-gray-700 text-sm leading-relaxed mb-6 italic">
+                    &quot;{testimonial.text}&quot;
+                  </p>
+                  <h4 className="text-lg font-bold text-gray-950">
+                    {testimonial.name}
+                  </h4>
+                  <p className="text-sm text-yellow-600 font-medium">
+                    {testimonial.role}
+                  </p>
                 </div>
               </div>
             ))}
@@ -217,7 +263,9 @@ export default function TQCHomepage() {
       </section>
 
       <style jsx global>{`
-        .swiper-pagination-bullet-active { background: #eab308 !important; }
+        .swiper-pagination-bullet-active {
+          background: #eab308 !important;
+        }
       `}</style>
     </div>
   );
