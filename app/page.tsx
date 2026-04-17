@@ -89,7 +89,7 @@ export default function TQCHomepage() {
               <div className="relative h-full w-full">
                 <Image
                   src={slide.image}
-                  alt={slide.title}
+                  alt={slide.title || "Hình ảnh slider"}
                   fill
                   priority
                   className="object-cover brightness-50"
