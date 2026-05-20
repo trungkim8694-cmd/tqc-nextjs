@@ -69,10 +69,10 @@ export default function TQCHomepage() {
   return (
     <div className="min-h-screen bg-white font-sans text-gray-800">
       {/* --- SEO METADATA --- */}
-      <title>TQC株式会社 | 外国人不動産・ベトナム人材・日越B2B調達</title>
+      <title>TQC株式会社 | 外国人向け不動産・日越B2Bサプライチェーン</title>
       <meta
         name="description"
-        content="TQC株式会社は、日本在住の外国人向け不動産仲介、優秀なベトナム人材紹介、そして日越B2Bサプライチェーン構築・購買代行を提供します。"
+        content="TQC株式会社は、日本在住の外国人向け不動産仲介、そして日越B2Bサプライチェーン構築・購買代行を提供します。"
       />
 
       {/* --- HERO SECTION --- */}

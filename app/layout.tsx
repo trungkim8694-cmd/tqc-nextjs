@@ -9,8 +9,8 @@ import Navbar from '@/components/Navbar';
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "TQC株式会社 | 外国人不動産・ベトナム人材・日越B2B調達",
-  description: "TQC株式会社は、日本在住の外国人向け不動産仲介、優秀なベトナム人材紹介、そして日越B2Bサプライチェーン構築・購買代行を提供します。",
+  title: "TQC株式会社 | 外国人向け不動産・日越B2Bサプライチェーン",
+  description: "TQC株式会社は、日本在住の外国人向け不動産仲介、そして日越B2Bサプライチェーン構築・購買代行を提供します。",
   icons: {
     icon: '/favicon.ico',
   },
@@ -86,8 +86,9 @@ export default function RootLayout({
                     ></iframe>
                 </div>
             </div>
-            <div className="text-center text-xs opacity-60 mt-10 pt-6 border-t border-gray-500">
-                © 2026 TQC CO., LTD. ALL RIGHTS RESERVED.
+            <div className="text-center text-xs opacity-60 mt-10 pt-6 border-t border-gray-500 space-y-2">
+                <p>※現在、有料職業紹介事業の新規ライセンス申請中につき、求人・求職に関するサービスは一時停止しております。</p>
+                <p>© 2026 TQC CO., LTD. ALL RIGHTS RESERVED.</p>
             </div>
         </footer>
       </body>
