@@ -12,28 +12,57 @@ export default function KigyoulistPage() {
   return (
     <div className="min-h-screen bg-gray-50 pt-10 pb-24">
       {/* --- HERO SECTION --- */}
-      <section className="bg-slate-900 text-white py-20 px-6 md:px-20 relative overflow-hidden">
-        <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-blue-600/20 blur-3xl"></div>
-        <div className="max-w-7xl mx-auto relative z-10 text-center">
-          <div className="inline-block px-4 py-1.5 rounded-full bg-blue-500/20 text-blue-300 font-semibold text-sm border border-blue-500/30 mb-6">
-            B2Bマッチング・企業データプラットフォーム
+      <section className="bg-slate-900 text-white pt-20 pb-28 px-6 md:px-20 relative overflow-hidden">
+        {/* Abstract background blobs */}
+        <div className="absolute top-0 right-0 -mr-20 -mt-20 w-[500px] h-[500px] rounded-full bg-blue-600/20 blur-[100px] pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-[400px] h-[400px] rounded-full bg-cyan-600/20 blur-[100px] pointer-events-none"></div>
+        
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            
+            {/* Left Text */}
+            <div>
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/20 text-blue-300 font-semibold text-sm border border-blue-500/30 mb-6">
+                B2Bマッチング・企業データプラットフォーム
+              </div>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 tracking-tight leading-tight">
+                ビジネスの可能性を広げる <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Kigyoulist (企業リスト)</span>
+              </h1>
+              <p className="text-lg text-gray-300 mb-8 leading-relaxed">
+                圧倒的なデータ量 và AI技術を駆使し、新規開拓営業からパートナー探しまで、あなたのビジネスを次のステージへ導きます。
+              </p>
+              
+              <div className="flex flex-wrap gap-4">
+                <a
+                  href="https://kigyoulist.com/ja"
+                  target="_blank"
+                  rel="noopener"
+                  className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-bold py-3.5 px-8 rounded-full shadow-lg shadow-blue-500/30 transition-all hover:scale-105 text-lg"
+                >
+                  Kigyoulist 公式サイトへ
+                  <ChevronRight className="w-5 h-5" />
+                </a>
+              </div>
+            </div>
+
+            {/* Right Mockup */}
+            <div className="relative mt-10 md:mt-0 perspective-1000">
+              <div className="relative w-full rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] transform md:rotate-y-[-5deg] md:rotate-x-[5deg] hover:rotate-y-0 hover:rotate-x-0 transition-transform duration-700">
+                <Image
+                  src="/kigyoulist.png"
+                  alt="Kigyoulist App Mockup"
+                  width={1024}
+                  height={1024}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="w-full h-auto object-contain"
+                  priority
+                />
+                <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-2xl pointer-events-none"></div>
+              </div>
+            </div>
+
           </div>
-          <h1 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight leading-tight">
-            ビジネスの可能性を広げる <br className="hidden md:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Kigyoulist (企業リスト)</span>
-          </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-10 leading-relaxed">
-            圧倒的なデータ量とAI技術を駆使し、新規開拓営業からパートナー探しまで、あなたのビジネスを次のステージへ導きます。
-          </p>
-          <a
-            href="https://kigyoulist.com/ja"
-            target="_blank"
-            rel="noopener"
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-bold py-4 px-10 rounded-full shadow-lg shadow-blue-500/30 transition-all hover:scale-105 text-lg"
-          >
-            Kigyoulist 公式サイトへ
-            <ChevronRight className="w-5 h-5" />
-          </a>
         </div>
       </section>
 
