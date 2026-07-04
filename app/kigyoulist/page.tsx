@@ -60,6 +60,14 @@ export default function KigyoulistPage() {
                 />
                 <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-2xl pointer-events-none"></div>
               </div>
+              
+              {/* Floating badge */}
+              <div className="absolute -bottom-6 -left-6 bg-white text-gray-900 px-6 py-4 rounded-xl shadow-xl animate-bounce z-20">
+                <div className="flex items-center gap-3">
+                  <div className="w-3 h-3 rounded-full bg-green-500 shadow-[0_0_10px_rgba(34,197,94,0.8)]"></div>
+                  <p className="font-bold text-sm">システム稼働中</p>
+                </div>
+              </div>
             </div>
 
           </div>
