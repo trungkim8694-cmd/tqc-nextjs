@@ -88,6 +88,12 @@ export default function RootLayout({
             </div>
             <div className="text-center text-xs opacity-60 mt-10 pt-6 border-t border-gray-500 space-y-2">
                 <p>※現在、有料職業紹介事業の新規ライセンス申請中につき、求人・求職に関するサービスは一時停止しております。</p>
+                <p className="text-gray-400 mt-2 text-sm">
+                  関連サービス：
+                  <a href="https://kigyoulist.com/ja" target="_blank" rel="noopener" className="text-gray-400 hover:text-white transition-colors underline mx-1">企業データベース (Kigyoulist)</a>
+                  {' | '}
+                  <a href="https://www.keibai-koubai.com/" target="_blank" rel="noopener" className="text-gray-400 hover:text-white transition-colors underline mx-1">競売・公売物件ポータル</a>
+                </p>
                 <p>© 2026 TQC CO., LTD. ALL RIGHTS RESERVED.</p>
             </div>
         </footer>

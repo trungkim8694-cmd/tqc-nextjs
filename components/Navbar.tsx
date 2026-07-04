@@ -13,8 +13,10 @@ export default function Navbar() {
   const navItems = [
     { name: "HOME", href: "/" },
     { name: "T-HOMES 不動産", href: "/t-homes" },
+    { name: "競売・公売物件", href: "/keibai-koubai" },
     // { name: '人材', href: '/human-resource' },
     { name: "B2B調達", href: "/b2b-supply" },
+    { name: "企業データベース", href: "/kigyoulist" },
     { name: "CONTACT", href: "/contact" },
   ];
 
@@ -31,7 +33,7 @@ export default function Navbar() {
             priority
           />
         </div>
-        <span className="font-bold text-xl tracking-tighter">TQC株式会社</span>
+        <span className="font-bold text-xl tracking-tighter text-black">TQC株式会社</span>
       </Link>
 
       {/* Menu cho Desktop */}
@@ -46,7 +48,7 @@ export default function Navbar() {
                 href={item.href}
                 // THÊM LOGIC MÀU XANH TẠI ĐÂY
                 className={`transition ${
-                  isActive ? "text-blue-600" : "hover:text-blue-600"
+                  isActive ? "text-blue-600" : "text-black hover:text-blue-600"
                 }`}
               >
                 {item.name}
@@ -54,15 +56,7 @@ export default function Navbar() {
             </li>
           );
         })}
-        <li className="text-red-600 hover:opacity-80 cursor-pointer transition border-l pl-4">
-          <a
-            href="https://aka-pla.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            日本-ベトナム架け橋
-          </a>
-        </li>
+        {/* Aka-pla link removed */}
       </ul>
 
       {/* --- MENU DI ĐỘNG --- */}

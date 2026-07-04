@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 // Thêm Image từ next/image để tối ưu hình ảnh
 import Image from "next/image";
+import Link from "next/link";
 // Thêm icon mới: UserPlus, Building2, TrendingUp, Flag, Quote
 import {
   Home,
@@ -217,6 +218,232 @@ export default function TQCHomepage() {
           </div>
         </div>
       </section>
+
+      {/* --- KEIBAI-KOUBAI SECTION (REAL ESTATE AUCTION & SEO BACKLINK) --- */}
+      <section className="py-24 px-4 md:px-20 bg-white text-gray-900 relative overflow-hidden">
+        {/* Background Decorative Elements */}
+        <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-emerald-500/10 blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-green-400/10 blur-3xl"></div>
+        
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center relative z-10">
+          {/* Left Content */}
+          <div className="space-y-8">
+            <div className="inline-block px-4 py-1.5 rounded-full bg-emerald-500/10 text-emerald-600 font-semibold text-sm border border-emerald-500/20">
+              新サービス・不動産投資
+            </div>
+            
+            <h2 className="text-3xl md:text-5xl font-extrabold leading-tight tracking-tight">
+              <span className="block mb-2">安全・安心な</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-green-400">競売・公売物件ポータル</span>
+              <span className="block mt-2 text-2xl md:text-3xl font-bold text-gray-600">優良な不動産投資の第一歩</span>
+            </h2>
+            
+            <p className="text-gray-600 text-lg leading-relaxed">
+              TQC株式会社は、不動産投資の新たな選択肢として、全国の競売・公売物件情報を集約した
+              <a 
+                href="https://www.keibai-koubai.com/" 
+                target="_blank" 
+                rel="noopener" 
+                className="text-emerald-600 hover:text-emerald-500 font-bold underline decoration-emerald-500/50 underline-offset-4 mx-1 transition-colors"
+                title="競売・公売物件ポータル - 不動産投資のKeibai-Koubai"
+              >
+                競売・公売物件ポータルサイト
+              </a>
+              を推奨しています。市場価格よりも安価に取得できる可能性が高い物件情報から、複雑な法的手続きのサポートまで、あなたの不動産投資を成功へと導きます。
+            </p>
+
+            <div className="pt-4 flex flex-wrap gap-4">
+              <a 
+                href="https://www.keibai-koubai.com/" 
+                target="_blank" 
+                rel="noopener"
+                className="group inline-flex items-center gap-3 bg-gradient-to-r from-emerald-600 to-green-500 hover:from-emerald-500 hover:to-green-400 text-white font-bold py-4 px-8 rounded-full shadow-lg shadow-emerald-500/30 transition-all hover:scale-105"
+              >
+                公式サイトを見る
+                <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </a>
+              <Link 
+                href="/keibai-koubai"
+                className="inline-flex items-center justify-center px-8 py-4 text-gray-700 font-bold transition-all border-2 border-gray-200 rounded-full hover:bg-gray-100 hover:border-gray-300"
+              >
+                詳細を見る
+              </Link>
+            </div>
+          </div>
+
+          {/* Right Mockup */}
+          <div className="relative perspective-1000">
+            <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl shadow-emerald-900/20 transform md:rotate-y-[-5deg] md:rotate-x-[5deg] hover:rotate-y-0 hover:rotate-x-0 transition-transform duration-700">
+              <Image
+                src="/keibaikoubai1.png"
+                alt="Keibai-Koubai App Mockup"
+                width={1024}
+                height={1024}
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="w-full h-auto object-contain"
+                priority
+              />
+            </div>
+            {/* Floating badge */}
+            <div className="absolute -bottom-6 -left-6 bg-white border border-gray-100 text-gray-900 px-6 py-4 rounded-xl shadow-xl animate-pulse">
+              <div className="flex items-center gap-3">
+                <div className="w-3 h-3 rounded-full bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.8)]"></div>
+                <p className="font-bold text-sm tracking-widest">REAL ESTATE</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* --- KIGYOULIST SECTION (B2B PLATFORM & SEO BACKLINK) --- */}
+      <section className="py-24 px-4 md:px-20 bg-slate-900 text-white relative overflow-hidden">
+        {/* Background Decorative Elements */}
+        <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-blue-600/10 blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-cyan-500/10 blur-3xl"></div>
+        
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center relative z-10">
+          {/* Left Content */}
+          <div className="space-y-8">
+            <div className="inline-block px-4 py-1.5 rounded-full bg-blue-500/20 text-blue-300 font-semibold text-sm border border-blue-500/30">
+              新サービス・B2Bマッチング
+            </div>
+            
+            <h2 className="text-3xl md:text-5xl font-extrabold leading-tight tracking-tight">
+              <span className="block mb-2">日本全国の</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">企業データプラットフォーム</span>
+              <span className="block mt-2 text-2xl md:text-3xl font-bold text-gray-300">営業リスト作成からB2Bマッチングまで</span>
+            </h2>
+            
+            <p className="text-gray-400 text-lg leading-relaxed">
+              TQC株式会社は、日本市場でのビジネス拡大を目指す企業様を強力にサポートします。
+              弊社の独自プラットフォームである
+              <a 
+                href="https://kigyoulist.com/ja" 
+                target="_blank" 
+                rel="noopener" 
+                className="text-blue-400 hover:text-blue-300 font-bold underline decoration-blue-500/50 underline-offset-4 mx-1 transition-colors"
+                title="Kigyoulist（企業リスト）- 日本全国の企業データプラットフォーム"
+              >
+                Kigyoulist（企業リスト）
+              </a>
+              を活用することで、精度の高いアタックリストの自動生成や、日越企業間のスムーズなB2Bマッチングを実現します。膨大な企業データを分析し、あなたのビジネスに最適なパートナーを素早く見つけ出します。
+            </p>
+
+            <div className="pt-4">
+              <a 
+                href="https://kigyoulist.com/ja" 
+                target="_blank" 
+                rel="noopener"
+                className="group inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-bold py-4 px-8 rounded-full shadow-lg shadow-blue-500/30 transition-all hover:scale-105"
+              >
+                Kigyoulistを試してみる
+                <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </a>
+            </div>
+          </div>
+
+          {/* Right Mockup */}
+          <div className="relative">
+            <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl shadow-black/50 transform hover:scale-[1.02] transition-transform duration-500">
+              <Image
+                src="/kigyoulist.png"
+                alt="Kigyoulist Dashboard Mockup"
+                width={1024}
+                height={1024}
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="w-full h-auto object-contain"
+                priority
+              />
+              {/* Optional Glass overlay for tech feel */}
+              <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-2xl pointer-events-none"></div>
+            </div>
+            {/* Floating badge */}
+            <div className="absolute -bottom-6 -left-6 bg-white text-gray-900 px-6 py-4 rounded-xl shadow-xl animate-bounce">
+              <div className="flex items-center gap-3">
+                <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                <p className="font-bold text-sm">システム稼働中</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* --- AKA-PLA SECTION (B2B SUPPLY CHAIN & SEO BACKLINK) --- */}
+      <section className="py-24 px-4 md:px-20 bg-gray-50 text-gray-900 relative overflow-hidden">
+        {/* Background Decorative Elements */}
+        <div className="absolute top-0 left-0 -ml-20 -mt-20 w-96 h-96 rounded-full bg-red-500/5 blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 -mr-20 -mb-20 w-80 h-80 rounded-full bg-orange-400/5 blur-3xl"></div>
+        
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center relative z-10">
+          {/* Left Mockup (Swapped side for variety) */}
+          <div className="relative order-2 md:order-1 perspective-1000">
+            <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl shadow-black/20 transform md:rotate-y-[5deg] md:rotate-x-[5deg] hover:rotate-y-0 hover:rotate-x-0 transition-transform duration-700">
+              <Image
+                src="/akapla1.png"
+                alt="Aka-pla B2B Trading Platform Mockup"
+                width={1024}
+                height={1024}
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="w-full h-auto object-contain"
+                priority
+              />
+            </div>
+            {/* Floating badge */}
+            <div className="absolute -top-6 -right-6 bg-white border border-gray-100 text-gray-900 px-6 py-4 rounded-xl shadow-xl animate-pulse">
+              <div className="flex items-center gap-3">
+                <div className="w-3 h-3 rounded-full bg-red-500 shadow-[0_0_10px_rgba(239,68,68,0.8)]"></div>
+                <p className="font-bold text-sm tracking-widest">GLOBAL B2B</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Content */}
+          <div className="space-y-8 order-1 md:order-2">
+            <div className="inline-block px-4 py-1.5 rounded-full bg-red-500/10 text-red-600 font-semibold text-sm border border-red-500/20">
+              B2B調達・サプライチェーン
+            </div>
+            
+            <h2 className="text-3xl md:text-5xl font-extrabold leading-tight tracking-tight">
+              <span className="block mb-2">日越をつなぐ</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-400">新しい架け橋</span>
+              <span className="block mt-2 text-2xl md:text-3xl font-bold text-gray-600">ベトナムでのB2B調達を強力サポート</span>
+            </h2>
+            
+            <p className="text-gray-600 text-lg leading-relaxed">
+              コスト削減や生産拠点の分散化を目指す企業様に向けて、TQC株式会社が運営する
+              <a 
+                href="https://www.aka-pla.com/" 
+                target="_blank" 
+                rel="noopener" 
+                className="text-red-500 hover:text-red-400 font-bold underline decoration-red-500/50 underline-offset-4 mx-1 transition-colors"
+                title="日本-ベトナム架け橋 (Aka-pla) - B2B調達プラットフォーム"
+              >
+                日本-ベトナム架け橋 (Aka-pla)
+              </a>
+              は、最適なソリューションを提供します。ベトナムの優良サプライヤー発掘から、日本基準での品質管理、そして複雑な物流・通関手続きまで、あらゆるプロセスをワンストップで代行いたします。
+            </p>
+
+            <div className="pt-4 flex flex-wrap gap-4">
+              <a 
+                href="https://www.aka-pla.com/" 
+                target="_blank" 
+                rel="noopener"
+                className="group inline-flex items-center gap-3 bg-gradient-to-r from-red-600 to-orange-500 hover:from-red-500 hover:to-orange-400 text-white font-bold py-4 px-8 rounded-full shadow-lg shadow-red-500/30 transition-all hover:scale-105"
+              >
+                Aka-pla 公式サイトへ
+                <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </a>
+              <Link 
+                href="/b2b-supply"
+                className="inline-flex items-center justify-center px-8 py-4 text-gray-700 font-bold transition-all border-2 border-gray-200 rounded-full hover:bg-gray-100 hover:border-gray-300"
+              >
+                詳細を見る
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
 
       {/* --- TESTIMONIALS SECTION (New) --- */}
       <section className="py-20 px-4 md:px-20 bg-white">
