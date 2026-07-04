@@ -75,7 +75,7 @@ export default function RootLayout({
                 </div>
                 <div className="w-full h-64 md:h-80 bg-gray-300 rounded-sm overflow-hidden">
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.800378036975!2d139.71539201526364!3d35.72886708018742!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188d6b4122d14b%3A0xea52d793836d5b06!2sTQC%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BE!5e0!3m2!1sja!2sjp!4v1680000000000!5m2!1sja!2sjp"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.0014485254!2d139.71541170000003!3d35.7261829!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188d3499c00959%3A0x7d958434b44609ba!2zVFFD5qCq5byP5Lya56S-!5e0!3m2!1svi!2s!4v1783168563908!5m2!1svi!2s"
                         width="100%"
                         height="100%"
                         style={{ border: 0 }}
