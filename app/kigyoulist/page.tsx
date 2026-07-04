@@ -10,7 +10,7 @@ export const metadata = {
 
 export default function KigyoulistPage() {
   return (
-    <div className="min-h-screen bg-gray-50 pt-10 pb-24">
+    <div className="min-h-screen bg-gray-50 pb-24">
       {/* --- HERO SECTION --- */}
       <section className="bg-slate-900 text-white pt-20 pb-28 px-6 md:px-20 relative overflow-hidden">
         {/* Abstract background blobs */}
