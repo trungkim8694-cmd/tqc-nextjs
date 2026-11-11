@@ -1,204 +1,232 @@
 "use client";
 
-import React from 'react';
-import { ShieldCheck, Search, Banknote, Gavel, ChevronRight, Globe } from 'lucide-react';
-import Image from 'next/image';
-import { useTranslations } from "next-intl";
+import React from "react";
+import { ShieldCheck, Search, Banknote, Gavel, Globe, CheckCircle2, ExternalLink, Mail, Phone } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { useTranslations, useLocale } from "next-intl";
 
 export default function KeibaiKoubaiPage() {
   const t = useTranslations("KeibaiKoubaiPage");
+  const tNav = useTranslations("Navbar");
+  const locale = useLocale();
+
+  const getHref = (path: string) => {
+    if (locale === "ja") return path;
+    return `/${locale}${path === "/" ? "" : path}`;
+  };
 
   const services = [
     {
-      icon: <Search className="w-10 h-10 text-emerald-500" />,
+      icon: <Search className="w-8 h-8 text-emerald-700" />,
       title: t("s1Title"),
-      description: t("s1Desc")
+      description: t("s1Desc"),
     },
     {
-      icon: <Gavel className="w-10 h-10 text-emerald-500" />,
+      icon: <Gavel className="w-8 h-8 text-emerald-700" />,
       title: t("s2Title"),
-      description: t("s2Desc")
+      description: t("s2Desc"),
     },
     {
-      icon: <ShieldCheck className="w-10 h-10 text-emerald-500" />,
+      icon: <ShieldCheck className="w-8 h-8 text-emerald-700" />,
       title: t("s3Title"),
-      description: t("s3Desc")
+      description: t("s3Desc"),
     },
     {
-      icon: <Banknote className="w-10 h-10 text-emerald-500" />,
+      icon: <Banknote className="w-8 h-8 text-emerald-700" />,
       title: t("s4Title"),
-      description: t("s4Desc")
-    }
+      description: t("s4Desc"),
+    },
   ];
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* --- HERO BANNER --- */}
-      <section className="bg-slate-900 text-white pt-20 pb-28 px-6 md:px-20 relative overflow-hidden">
-        {/* Abstract background blobs */}
-        <div className="absolute top-0 right-0 -mr-20 -mt-20 w-[500px] h-[500px] rounded-full bg-emerald-600/20 blur-[100px] pointer-events-none"></div>
-        <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-[400px] h-[400px] rounded-full bg-green-600/20 blur-[100px] pointer-events-none"></div>
-        
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            
-            {/* Left Text */}
-            <div>
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/20 text-emerald-300 font-semibold text-sm border border-emerald-500/30 mb-6">
-                <Globe className="w-4 h-4" />
-                {t("badge")}
+    <div className="min-h-screen bg-white text-slate-800">
+      {/* --- HERO BANNER (LIGHT, SOFT EMERALD/SLATE THEME) --- */}
+      <section className="bg-gradient-to-b from-emerald-50/70 via-slate-50 to-white text-slate-900 pt-14 pb-20 px-4 sm:px-6 lg:px-8 border-b border-slate-200 relative">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-12 gap-10 items-center">
+            {/* Left Content */}
+            <div className="md:col-span-6 space-y-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-emerald-100 text-emerald-800 text-xs font-mono font-bold tracking-wider uppercase border border-emerald-200">
+                <Globe size={13} className="text-emerald-700" />
+                <span>{t("badge")}</span>
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 tracking-tight leading-tight">
+
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
                 {t("title1")}<br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300">{t("title2")}</span>
+                <span className="text-emerald-700">{t("title2")}</span>
               </h1>
-              <p className="text-lg text-gray-300 mb-8 leading-relaxed">
-                {t("desc")}
-                <a 
-                  href="https://www.keibai-koubai.com/" 
-                  target="_blank" 
+
+              <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+                {t("desc")}{" "}
+                <a
+                  href="https://www.keibai-koubai.com/"
+                  target="_blank"
                   rel="noopener"
-                  className="text-emerald-400 font-bold hover:underline hover:text-emerald-300 mx-1 transition-colors"
+                  className="text-emerald-700 font-bold hover:underline mx-1"
                 >
                   {t("desc_link")}
                 </a>
                 {t("desc_after")}
               </p>
-              
-              <div className="flex flex-wrap gap-4">
+
+              <div className="flex flex-wrap gap-3 pt-2">
                 <a
                   href="https://www.keibai-koubai.com/"
                   target="_blank"
                   rel="noopener"
-                  className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-600 to-green-500 hover:from-emerald-500 hover:to-green-400 text-white font-bold py-3.5 px-8 rounded-full shadow-lg shadow-emerald-500/30 transition-all hover:scale-105 text-lg"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-sm shadow-xs transition-colors"
                 >
-                  {t("btn1")}
-                  <ChevronRight className="w-5 h-5" />
+                  <span>{t("btn1")}</span>
+                  <ExternalLink size={15} />
                 </a>
-                <a 
-                  href="#services"
-                  className="inline-flex items-center justify-center px-8 py-3.5 text-lg font-bold text-white transition-all border-2 border-gray-600 rounded-full hover:bg-gray-800 hover:border-gray-500"
+                <Link
+                  href={getHref("/contact")}
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-white hover:bg-slate-50 text-slate-800 border border-slate-300 font-semibold text-sm transition-colors shadow-xs"
                 >
-                  {t("btn2")}
-                </a>
+                  <Mail size={15} className="text-emerald-700" />
+                  <span>入札相談・問い合わせ</span>
+                </Link>
               </div>
             </div>
 
             {/* Right Mockup */}
-            <div className="relative mt-10 md:mt-0 perspective-1000">
-              <div className="relative w-full rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] transform md:rotate-y-[-5deg] md:rotate-x-[5deg] hover:rotate-y-0 hover:rotate-x-0 transition-transform duration-700">
-                <Image
-                  src="/keibaikoubai1.png"
-                  alt="Keibai-Koubai App Mockup"
-                  width={1024}
-                  height={1024}
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="w-full h-auto object-contain"
-                  priority
-                />
-                <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-2xl pointer-events-none"></div>
-              </div>
-              
-              {/* Floating badges */}
-              <div className="absolute -top-6 -right-6 bg-white/10 backdrop-blur-md border border-white/20 text-white px-6 py-4 rounded-xl shadow-xl animate-pulse">
-                <div className="flex items-center gap-3">
-                  <div className="w-3 h-3 rounded-full bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.8)]"></div>
-                  <p className="font-bold text-sm tracking-widest">{t("floatingBadge")}</p>
+            <div className="md:col-span-6">
+              <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-xs">
+                <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-slate-50">
+                  <Image
+                    src="/keibaikoubai1.png"
+                    alt="Keibai-Koubai Platform Mockup"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-contain"
+                    priority
+                  />
+                </div>
+                <div className="mt-3 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                  <span className="flex items-center gap-1.5 font-medium text-emerald-700">
+                    <CheckCircle2 size={14} /> 全国裁判所・税務公売データ集約
+                  </span>
+                  <span className="font-mono text-slate-400">keibai-koubai.com</span>
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </section>
 
-      {/* --- SEO ARTICLE & OVERVIEW --- */}
-      <section className="max-w-4xl mx-auto px-6 mt-[-40px] relative z-20">
-        <div className="bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-gray-100">
-          <article className="prose prose-lg prose-emerald max-w-none text-gray-700">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 border-b-2 border-emerald-500 inline-block pb-2">
+      {/* --- OVERVIEW & LEGAL CONTEXT --- */}
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 -mt-8 relative z-20">
+        <div className="bg-white p-7 sm:p-10 rounded-xl shadow-xs border border-slate-200">
+          <div className="flex items-center gap-2.5 mb-5 pb-2 border-b border-slate-100">
+            <span className="w-1.5 h-5 bg-emerald-700 rounded-sm"></span>
+            <h2 className="text-xl sm:text-2xl font-bold text-slate-900">
               {t("h2_1")}
             </h2>
-            <p className="leading-relaxed mb-6" dangerouslySetInnerHTML={{ __html: t.raw("p1") }}></p>
-            <p className="leading-relaxed mb-8">
-              {t("p2")}
-              <a 
-                href="https://www.keibai-koubai.com/" 
-                target="_blank" 
-                rel="noopener"
-                className="text-emerald-600 font-bold hover:underline mx-1"
-              >
-                {t("p2_link")}
-              </a>
-              {t("p2_after")}
-            </p>
-          </article>
+          </div>
+          <p className="text-slate-700 text-sm sm:text-base leading-relaxed mb-5" dangerouslySetInnerHTML={{ __html: t.raw("p1") }}></p>
+          <p className="text-slate-700 text-sm sm:text-base leading-relaxed">
+            {t("p2")}{" "}
+            <a
+              href="https://www.keibai-koubai.com/"
+              target="_blank"
+              rel="noopener"
+              className="text-emerald-700 font-bold hover:underline mx-1"
+            >
+              {t("p2_link")}
+            </a>
+            {t("p2_after")}
+          </p>
         </div>
       </section>
 
-      {/* --- SERVICES SECTION --- */}
-      <section id="services" className="py-20 px-6 max-w-7xl mx-auto mt-10">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">{t("servicesTitle")}</h2>
-          <p className="text-gray-500 max-w-2xl mx-auto">{t("servicesDesc")}</p>
+      {/* --- SERVICES GRID --- */}
+      <section id="services" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="text-center max-w-2xl mx-auto mb-14">
+          <span className="text-xs font-bold text-emerald-700 uppercase tracking-widest block mb-2">
+            OUR SUPPORT SERVICES
+          </span>
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+            {t("servicesTitle")}
+          </h2>
+          <p className="text-slate-500 text-xs sm:text-sm mt-2">{t("servicesDesc")}</p>
         </div>
-        
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => (
-            <div key={index} className="bg-white border border-gray-100 rounded-2xl p-8 hover:shadow-xl hover:-translate-y-1 transition-all group">
-              <div className="mb-6 p-4 bg-emerald-50 rounded-2xl inline-block group-hover:scale-110 transition-transform">
+            <div
+              key={index}
+              className="bg-white border border-slate-200 rounded-xl p-6 hover:border-emerald-300 hover:shadow-xs transition-all"
+            >
+              <div className="w-12 h-12 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center mb-5 border border-emerald-100">
                 {service.icon}
               </div>
-              <h3 className="text-xl font-bold mb-3 text-gray-900">{service.title}</h3>
-              <p className="text-gray-600 leading-relaxed text-sm">{service.description}</p>
+              <h3 className="text-base font-bold text-slate-900 mb-2">{service.title}</h3>
+              <p className="text-xs text-slate-600 leading-relaxed">{service.description}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* --- WHY CHOOSE US SECTION --- */}
-      <section className="py-20 bg-white px-6 border-t border-gray-100">
+      {/* --- WHY CHOOSE TQC --- */}
+      <section className="py-20 bg-slate-50 px-4 sm:px-6 lg:px-8 border-t border-slate-200">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-16 text-gray-900">{t("whyTitle")}</h2>
-          <div className="grid md:grid-cols-3 gap-10 text-center">
-            <div className="bg-gray-50 p-10 rounded-3xl hover:bg-emerald-50 transition-colors border border-transparent hover:border-emerald-100">
-              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm">
-                <span className="text-2xl font-black text-emerald-500">1</span>
-              </div>
-              <h4 className="text-xl font-bold text-gray-900 mb-4">{t("w1Title")}</h4>
-              <p className="text-gray-600">{t("w1Desc")}</p>
+          <div className="text-center max-w-2xl mx-auto mb-14">
+            <span className="text-xs font-bold text-emerald-700 uppercase tracking-widest block mb-2">
+              COMPETITIVE ADVANTAGE
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+              {t("whyTitle")}
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6 text-center">
+            <div className="bg-white p-8 rounded-xl border border-slate-200 shadow-xs">
+              <span className="inline-block text-emerald-700 font-mono font-extrabold text-2xl mb-3">01</span>
+              <h4 className="text-base font-bold text-slate-900 mb-2">{t("w1Title")}</h4>
+              <p className="text-xs text-slate-600 leading-relaxed">{t("w1Desc")}</p>
             </div>
-            <div className="bg-gray-50 p-10 rounded-3xl hover:bg-emerald-50 transition-colors border border-transparent hover:border-emerald-100">
-              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm">
-                <span className="text-2xl font-black text-emerald-500">2</span>
-              </div>
-              <h4 className="text-xl font-bold text-gray-900 mb-4">{t("w2Title")}</h4>
-              <p className="text-gray-600">{t("w2Desc")}</p>
+            <div className="bg-white p-8 rounded-xl border border-slate-200 shadow-xs">
+              <span className="inline-block text-emerald-700 font-mono font-extrabold text-2xl mb-3">02</span>
+              <h4 className="text-base font-bold text-slate-900 mb-2">{t("w2Title")}</h4>
+              <p className="text-xs text-slate-600 leading-relaxed">{t("w2Desc")}</p>
             </div>
-            <div className="bg-gray-50 p-10 rounded-3xl hover:bg-emerald-50 transition-colors border border-transparent hover:border-emerald-100">
-              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm">
-                <span className="text-2xl font-black text-emerald-500">3</span>
-              </div>
-              <h4 className="text-xl font-bold text-gray-900 mb-4">{t("w3Title")}</h4>
-              <p className="text-gray-600">{t("w3Desc")}</p>
+            <div className="bg-white p-8 rounded-xl border border-slate-200 shadow-xs">
+              <span className="inline-block text-emerald-700 font-mono font-extrabold text-2xl mb-3">03</span>
+              <h4 className="text-base font-bold text-slate-900 mb-2">{t("w3Title")}</h4>
+              <p className="text-xs text-slate-600 leading-relaxed">{t("w3Desc")}</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* --- CTA SECTION --- */}
-      <section className="py-24 px-6 text-center bg-slate-900 relative overflow-hidden mt-10">
-        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent"></div>
-        <div className="relative z-10 max-w-3xl mx-auto">
-          <h3 className="text-3xl md:text-4xl font-bold mb-6 text-white tracking-tight">{t("ctaTitle")}</h3>
-          <p className="text-gray-400 mb-10 text-lg">
+      {/* --- BOTTOM CTA (SOFT, LIGHT THEME) --- */}
+      <section className="py-16 px-4 sm:px-6 bg-gradient-to-r from-emerald-50 via-slate-50 to-emerald-50 border-t border-slate-200 text-slate-900 text-center">
+        <div className="max-w-3xl mx-auto space-y-5">
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
+            {t("ctaTitle")}
+          </h3>
+          <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
             {t("ctaDesc")}
           </p>
-          <a href="https://www.keibai-koubai.com/" target="_blank" rel="noopener">
-            <button className="bg-gradient-to-r from-emerald-600 to-green-500 text-white font-bold py-4 px-12 rounded-full hover:shadow-[0_0_30px_rgba(16,185,129,0.6)] hover:scale-105 transition-all duration-300 text-lg">
-              {t("ctaBtn")}
-            </button>
-          </a>
+          <div className="flex flex-wrap justify-center gap-3 pt-2">
+            <a
+              href="https://www.keibai-koubai.com/"
+              target="_blank"
+              rel="noopener"
+              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-md bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-sm shadow-xs transition-colors"
+            >
+              <span>{t("ctaBtn")}</span>
+              <ExternalLink size={15} />
+            </a>
+            <Link
+              href={getHref("/contact")}
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-md bg-white hover:bg-slate-50 text-slate-800 border border-slate-300 font-semibold text-sm transition-colors shadow-xs"
+            >
+              <Mail size={15} className="text-emerald-700" />
+              <span>{tNav("contact")}</span>
+            </Link>
+          </div>
         </div>
       </section>
     </div>

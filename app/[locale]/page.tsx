@@ -7,14 +7,20 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   Home,
-  Users,
-  Zap,
   ChevronLeft,
   ChevronRight,
-  Flag,
   UserPlus,
   Building2,
   TrendingUp,
+  ShieldCheck,
+  Search,
+  Database,
+  Truck,
+  ExternalLink,
+  ArrowRight,
+  Phone,
+  Mail,
+  CheckCircle2,
 } from "lucide-react";
 
 import "swiper/css";
@@ -25,11 +31,13 @@ import { useTranslations, useLocale } from "next-intl";
 
 export default function TQCHomepage() {
   const t = useTranslations("Homepage");
+  const tNav = useTranslations("Navbar");
+  const tProfile = useTranslations("CompanyProfile");
   const locale = useLocale();
 
   const getHref = (path: string) => {
-    if (locale === 'ja') return path;
-    return `/${locale}${path === '/' ? '' : path}`;
+    if (locale === "ja") return path;
+    return `/${locale}${path === "/" ? "" : path}`;
   };
 
   const slides = [
@@ -38,34 +46,45 @@ export default function TQCHomepage() {
       image: "/hero-1.jpg",
       title: t("hero.slide1Title"),
       subTitle: t("hero.slide1Sub"),
+      tag: "REAL ESTATE",
+      ctaHref: "/t-homes",
+      ctaText: tNav("thomes"),
     },
     {
       id: 2,
       image: "/hero-2.jpg",
+      title: t("hero.slide2Title"),
+      subTitle: t("hero.slide2Sub"),
+      tag: "AUCTIONS & DATA",
+      ctaHref: "/keibai-koubai",
+      ctaText: tNav("keibai"),
     },
     {
       id: 3,
       image: "/hero-3.jpg",
       title: t("hero.slide3Title"),
       subTitle: t("hero.slide3Sub"),
+      tag: "B2B SUPPLY CHAIN",
+      ctaHref: "/b2b-supply",
+      ctaText: tNav("b2bsupply"),
     },
   ];
 
   const testimonials = [
     {
-      name: "Nguyễn .... V",
+      name: "Nguyễn V.",
       role: t("testimonials.t1Role"),
       avatar: "/avatar-1.jpg",
       text: t("testimonials.t1Text"),
     },
     {
-      name: "Trần ... C",
+      name: "Trần C.",
       role: t("testimonials.t2Role"),
       avatar: "/avatar-2.jpg",
       text: t("testimonials.t2Text"),
     },
     {
-      name: "Hà ... T",
+      name: "Hà T.",
       role: t("testimonials.t3Role"),
       avatar: "/avatar-3.jpg",
       text: t("testimonials.t3Text"),
@@ -73,14 +92,14 @@ export default function TQCHomepage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white font-sans text-gray-800">
-      {/* --- HERO SECTION --- */}
-      <section className="relative h-[500px] md:h-[600px] w-full">
+    <div className="min-h-screen bg-white font-sans text-slate-800">
+      {/* --- HERO SECTION CAROUSEL --- */}
+      <section className="relative h-[480px] sm:h-[540px] md:h-[600px] w-full bg-slate-800 overflow-hidden">
         <Swiper
           modules={[Autoplay, Pagination, Navigation]}
-          autoplay={{ delay: 5000 }}
+          autoplay={{ delay: 5500, disableOnInteraction: false }}
           pagination={{ clickable: true }}
-          navigation={{ nextEl: ".next-btn", prevEl: ".prev-btn" }}
+          navigation={{ nextEl: ".hero-next-btn", prevEl: ".hero-prev-btn" }}
           className="h-full"
         >
           {slides.map((slide) => (
@@ -88,315 +107,422 @@ export default function TQCHomepage() {
               <div className="relative h-full w-full">
                 <Image
                   src={slide.image}
-                  alt={slide.title || "Hero Image"}
+                  alt={slide.title || "TQC Header Banner"}
                   fill
-                  priority
-                  className="object-cover brightness-50"
+                  priority={slide.id === 1}
+                  className="object-cover opacity-60"
                 />
-                <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 z-10">
-                  <h1 className="text-3xl md:text-6xl font-extrabold text-yellow-500 mb-6 max-w-4xl tracking-tight">
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/40 to-slate-900/20" />
+
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 sm:px-6 z-10 max-w-5xl mx-auto">
+                  <span className="inline-block px-3 py-1 rounded bg-blue-600/90 text-white font-mono text-xs tracking-widest font-semibold uppercase mb-4 shadow-xs">
+                    {slide.tag}
+                  </span>
+                  <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 sm:mb-6 tracking-tight leading-tight">
                     {slide.title}
                   </h1>
-                  <p className="text-white text-lg md:text-2xl font-light tracking-widest">
+                  <p className="text-slate-100 text-sm sm:text-base md:text-xl font-normal max-w-3xl leading-relaxed mb-8">
                     {slide.subTitle}
                   </p>
+
+                  <div className="flex flex-wrap items-center justify-center gap-3">
+                    <Link
+                      href={getHref(slide.ctaHref)}
+                      className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm transition-all shadow-md hover:scale-[1.02]"
+                    >
+                      <span>{slide.ctaText}</span>
+                      <ArrowRight size={16} />
+                    </Link>
+                    <Link
+                      href={getHref("/contact")}
+                      className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-white/20 hover:bg-white/30 text-white border border-white/40 font-semibold text-sm backdrop-blur-xs transition-all"
+                    >
+                      <Mail size={16} />
+                      <span>{tNav("contact")}</span>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </SwiperSlide>
           ))}
-          <button className="prev-btn absolute left-4 top-1/2 -translate-y-1/2 z-30 text-white/50 hover:text-white">
-            <ChevronLeft size={50} />
+          <button
+            className="hero-prev-btn absolute left-4 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-black/30 hover:bg-black/60 text-white flex items-center justify-center backdrop-blur-xs transition-all cursor-pointer"
+            aria-label="Previous Slide"
+          >
+            <ChevronLeft size={24} />
           </button>
-          <button className="next-btn absolute right-4 top-1/2 -translate-y-1/2 z-30 text-white/50 hover:text-white">
-            <ChevronRight size={50} />
+          <button
+            className="hero-next-btn absolute right-4 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-black/30 hover:bg-black/60 text-white flex items-center justify-center backdrop-blur-xs transition-all cursor-pointer"
+            aria-label="Next Slide"
+          >
+            <ChevronRight size={24} />
           </button>
         </Swiper>
       </section>
 
-      {/* --- PROPERTY SERVICES SECTION --- */}
-      <section className="py-20 px-4 md:px-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-          <div className="relative h-[500px] rounded-3xl overflow-hidden shadow-2xl">
-            <Image
-              src="/property-services.jpg" 
-              alt="Property Services"
-              fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
-              className="object-cover"
-              loading="eager"
-            />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-sm rounded-full w-32 h-32 flex flex-col items-center justify-center text-center shadow-lg p-4">
-              <span className="text-gray-950 font-bold text-sm tracking-tight" dangerouslySetInnerHTML={{__html: t("services.title").replace("不動産", "不動産<br/>")}}>
-              </span>
-            </div>
+      {/* --- CORPORATE TRUST & CREDENTIALS STRIP (会社概要・許認可) --- */}
+      <section className="bg-slate-50 border-b border-slate-200 py-6 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 text-center">
+          <div className="bg-white p-4 rounded-lg border border-slate-200 shadow-xs">
+            <span className="text-[11px] text-slate-500 block uppercase font-medium">宅地建物取引業免許</span>
+            <strong className="text-slate-900 text-sm sm:text-base font-bold flex items-center justify-center gap-1.5 mt-1 text-blue-700">
+              <ShieldCheck size={16} className="shrink-0" />
+              <span>東京都知事 (1) 第107650号</span>
+            </strong>
           </div>
-          <div className="grid grid-cols-2 gap-6">
-            {[
-              { icon: Home, title: t("services.chintai") },
-              { icon: UserPlus, title: t("services.hikkoshi") },
-              { icon: Building2, title: t("services.baibai") },
-              { icon: TrendingUp, title: t("services.toushi") },
-            ].map((service, index) => (
-              <div
-                key={index}
-                className="bg-white border border-gray-100 rounded-3xl p-8 shadow-sm hover:shadow-xl transition-shadow duration-300 flex flex-col items-center text-center"
-              >
-                <div className="bg-gray-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
-                  <service.icon className="w-8 h-8 text-gray-700" />
-                </div>
-                <h3 className="text-lg font-bold text-gray-950">
-                  {service.title}
-                </h3>
-              </div>
-            ))}
+          <div className="bg-white p-4 rounded-lg border border-slate-200 shadow-xs">
+            <span className="text-[11px] text-slate-500 block uppercase font-medium">法人番号 / 国税庁登記</span>
+            <strong className="text-slate-900 text-sm sm:text-base font-mono font-bold block mt-1">
+              4-0133-0104-8678
+            </strong>
+          </div>
+          <div className="bg-white p-4 rounded-lg border border-slate-200 shadow-xs">
+            <span className="text-[11px] text-slate-500 block uppercase font-medium">代表取締役 (CEO)</span>
+            <strong className="text-slate-900 text-sm sm:text-base font-bold block mt-1">
+              栗本 賢之 (Kurimoto)
+            </strong>
+          </div>
+          <div className="bg-white p-4 rounded-lg border border-slate-200 shadow-xs">
+            <span className="text-[11px] text-slate-500 block uppercase font-medium">資本金 / 設立</span>
+            <strong className="text-slate-900 text-sm sm:text-base font-bold block mt-1">
+              2,055万円 / 2022年2月
+            </strong>
           </div>
         </div>
       </section>
 
-      {/* --- KEIBAI-KOUBAI SECTION --- */}
-      <section className="py-24 px-4 md:px-20 bg-white text-gray-900 relative overflow-hidden">
-        <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-emerald-500/10 blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-green-400/10 blur-3xl"></div>
-        
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center relative z-10">
-          <div className="space-y-8">
-            <div className="inline-block px-4 py-1.5 rounded-full bg-emerald-500/10 text-emerald-600 font-semibold text-sm border border-emerald-500/20">
-              {t("keibai.badge")}
-            </div>
-            
-            <h2 className="text-3xl md:text-5xl font-extrabold leading-tight tracking-tight">
-              <span className="block mb-2">{t("keibai.title1")}</span>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-green-400">{t("keibai.title2")}</span>
-              <span className="block mt-2 text-2xl md:text-3xl font-bold text-gray-600">{t("keibai.title3")}</span>
-            </h2>
-            
-            <p className="text-gray-600 text-lg leading-relaxed">
-              {t("keibai.desc1")}
-              <a 
-                href="https://www.keibai-koubai.com/" 
-                target="_blank" 
-                rel="noopener" 
-                className="text-emerald-600 hover:text-emerald-500 font-bold underline decoration-emerald-500/50 underline-offset-4 mx-1 transition-colors"
-                title="Keibai-Koubai"
-              >
-                {t("keibai.desc2")}
-              </a>
-              {t("keibai.desc3")}
-            </p>
-
-            <div className="pt-4 flex flex-wrap gap-4">
-              <a 
-                href="https://www.keibai-koubai.com/" 
-                target="_blank" 
-                rel="noopener"
-                className="group inline-flex items-center gap-3 bg-gradient-to-r from-emerald-600 to-green-500 hover:from-emerald-500 hover:to-green-400 text-white font-bold py-4 px-8 rounded-full shadow-lg shadow-emerald-500/30 transition-all hover:scale-105"
-              >
-                {t("keibai.btn1")}
-                <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </a>
-              <Link 
-                href={getHref("/keibai-koubai")}
-                className="inline-flex items-center justify-center px-8 py-4 text-gray-700 font-bold transition-all border-2 border-gray-200 rounded-full hover:bg-gray-100 hover:border-gray-300"
-              >
-                {t("keibai.btn2")}
-              </Link>
-            </div>
-          </div>
-
-          <div className="relative perspective-1000">
-            <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl shadow-emerald-900/20 transform md:rotate-y-[-5deg] md:rotate-x-[5deg] hover:rotate-y-0 hover:rotate-x-0 transition-transform duration-700">
-              <Image
-                src="/keibaikoubai1.png"
-                alt="Keibai-Koubai App Mockup"
-                width={1024}
-                height={1024}
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="w-full h-auto object-contain"
-                priority
-              />
-            </div>
-            <div className="absolute -bottom-6 -left-6 bg-white border border-gray-100 text-gray-900 px-6 py-4 rounded-xl shadow-xl animate-pulse">
-              <div className="flex items-center gap-3">
-                <div className="w-3 h-3 rounded-full bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.8)]"></div>
-                <p className="font-bold text-sm tracking-widest">{t("keibai.floatingBadge")}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* --- KIGYOULIST SECTION --- */}
-      <section className="py-24 px-4 md:px-20 bg-slate-900 text-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-blue-600/10 blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-cyan-500/10 blur-3xl"></div>
-        
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center relative z-10">
-          <div className="space-y-8">
-            <div className="inline-block px-4 py-1.5 rounded-full bg-blue-500/20 text-blue-300 font-semibold text-sm border border-blue-500/30">
-              {t("kigyoulist.badge")}
-            </div>
-            
-            <h2 className="text-3xl md:text-5xl font-extrabold leading-tight tracking-tight">
-              <span className="block mb-2">{t("kigyoulist.title1")}</span>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">{t("kigyoulist.title2")}</span>
-              <span className="block mt-2 text-2xl md:text-3xl font-bold text-gray-300">{t("kigyoulist.title3")}</span>
-            </h2>
-            
-            <p className="text-gray-400 text-lg leading-relaxed">
-              {t("kigyoulist.desc1")}
-              <a 
-                href="https://kigyoulist.com/ja" 
-                target="_blank" 
-                rel="noopener" 
-                className="text-blue-400 hover:text-blue-300 font-bold underline decoration-blue-500/50 underline-offset-4 mx-1 transition-colors"
-              >
-                {t("kigyoulist.desc2")}
-              </a>
-              {t("kigyoulist.desc3")}
-            </p>
-
-            <div className="pt-4">
-              <a 
-                href="https://kigyoulist.com/ja" 
-                target="_blank" 
-                rel="noopener"
-                className="group inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-bold py-4 px-8 rounded-full shadow-lg shadow-blue-500/30 transition-all hover:scale-105"
-              >
-                {t("kigyoulist.btn1")}
-                <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </a>
-            </div>
-          </div>
-
-          <div className="relative">
-            <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl shadow-black/50 transform hover:scale-[1.02] transition-transform duration-500">
-              <Image
-                src="/kigyoulist.png"
-                alt="Kigyoulist"
-                width={1024}
-                height={1024}
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="w-full h-auto object-contain"
-                priority
-              />
-              <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-2xl pointer-events-none"></div>
-            </div>
-            <div className="absolute -bottom-6 -left-6 bg-white text-gray-900 px-6 py-4 rounded-xl shadow-xl animate-bounce">
-              <div className="flex items-center gap-3">
-                <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                <p className="font-bold text-sm">{t("kigyoulist.floatingBadge")}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* --- AKA-PLA SECTION --- */}
-      <section className="py-24 px-4 md:px-20 bg-gray-50 text-gray-900 relative overflow-hidden">
-        <div className="absolute top-0 left-0 -ml-20 -mt-20 w-96 h-96 rounded-full bg-red-500/5 blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 -mr-20 -mb-20 w-80 h-80 rounded-full bg-orange-400/5 blur-3xl"></div>
-        
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center relative z-10">
-          <div className="relative order-2 md:order-1 perspective-1000">
-            <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl shadow-black/20 transform md:rotate-y-[5deg] md:rotate-x-[5deg] hover:rotate-y-0 hover:rotate-x-0 transition-transform duration-700">
-              <Image
-                src="/akapla1.png"
-                alt="Aka-pla"
-                width={1024}
-                height={1024}
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="w-full h-auto object-contain"
-                priority
-              />
-            </div>
-            <div className="absolute -top-6 -right-6 bg-white border border-gray-100 text-gray-900 px-6 py-4 rounded-xl shadow-xl animate-pulse">
-              <div className="flex items-center gap-3">
-                <div className="w-3 h-3 rounded-full bg-red-500 shadow-[0_0_10px_rgba(239,68,68,0.8)]"></div>
-                <p className="font-bold text-sm tracking-widest">{t("akapla.floatingBadge")}</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="space-y-8 order-1 md:order-2">
-            <div className="inline-block px-4 py-1.5 rounded-full bg-red-500/10 text-red-600 font-semibold text-sm border border-red-500/20">
-              {t("akapla.badge")}
-            </div>
-            
-            <h2 className="text-3xl md:text-5xl font-extrabold leading-tight tracking-tight">
-              <span className="block mb-2">{t("akapla.title1")}</span>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-400">{t("akapla.title2")}</span>
-              <span className="block mt-2 text-2xl md:text-3xl font-bold text-gray-600">{t("akapla.title3")}</span>
-            </h2>
-            
-            <p className="text-gray-600 text-lg leading-relaxed">
-              {t("akapla.desc1")}
-              <a 
-                href="https://www.aka-pla.com/" 
-                target="_blank" 
-                rel="noopener" 
-                className="text-red-500 hover:text-red-400 font-bold underline decoration-red-500/50 underline-offset-4 mx-1 transition-colors"
-              >
-                {t("akapla.desc2")}
-              </a>
-              {t("akapla.desc3")}
-            </p>
-
-            <div className="pt-4 flex flex-wrap gap-4">
-              <a 
-                href="https://www.aka-pla.com/" 
-                target="_blank" 
-                rel="noopener"
-                className="group inline-flex items-center gap-3 bg-gradient-to-r from-red-600 to-orange-500 hover:from-red-500 hover:to-orange-400 text-white font-bold py-4 px-8 rounded-full shadow-lg shadow-red-500/30 transition-all hover:scale-105"
-              >
-                {t("akapla.btn1")}
-                <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </a>
-              <Link 
-                href={getHref("/b2b-supply")}
-                className="inline-flex items-center justify-center px-8 py-4 text-gray-700 font-bold transition-all border-2 border-gray-200 rounded-full hover:bg-gray-100 hover:border-gray-300"
-              >
-                {t("akapla.btn2")}
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* --- TESTIMONIALS SECTION --- */}
-      <section className="py-20 px-4 md:px-20 bg-white">
+      {/* --- 1. T-HOMES PROPERTY SERVICES --- */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-16 border-b-2 border-yellow-500 w-fit mx-auto pb-2">
-            {t("testimonials.title")}
-          </h2>
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 pb-4 border-b border-slate-200 gap-4">
+            <div>
+              <span className="text-xs font-bold text-blue-700 uppercase tracking-widest block mb-1">
+                CORE PILLAR 01 • REAL ESTATE
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+                {tNav("thomes")}
+              </h2>
+            </div>
+            <Link
+              href={getHref("/t-homes")}
+              className="inline-flex items-center gap-1.5 text-sm font-bold text-blue-700 hover:text-blue-800 transition-colors"
+            >
+              <span>{t("keibai.btn2")}</span>
+              <ChevronRight size={16} />
+            </Link>
+          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
+          <div className="grid md:grid-cols-12 gap-8 items-center">
+            <div className="md:col-span-5 relative h-[360px] sm:h-[420px] rounded-xl overflow-hidden border border-slate-200 shadow-sm">
+              <Image
+                src="/property-services.jpg"
+                alt="TQC Real Estate Services"
+                fill
+                sizes="(max-width: 768px) 100vw, 40vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-transparent to-transparent flex flex-col justify-end p-6">
+                <span className="text-xs font-semibold text-blue-300">入居者ファースト精神</span>
+                <p className="text-white text-lg font-bold mt-1">
+                  東京都・首都圏の賃貸仲介から収益不動産売買まで
+                </p>
+              </div>
+            </div>
+
+            <div className="md:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {[
+                {
+                  icon: Home,
+                  title: t("services.chintai"),
+                  desc: "外国人向け審査サポート・多言語対応・敷金礼金優遇物件の厳選案内",
+                },
+                {
+                  icon: UserPlus,
+                  title: t("services.hikkoshi"),
+                  desc: "家具家電レンタル・ライフライン開通・引っ越し手続きの一貫支援",
+                },
+                {
+                  icon: Building2,
+                  title: t("services.baibai"),
+                  desc: "マンション・一戸建ての購入相談、住宅ローン審査の専門コーディネート",
+                },
+                {
+                  icon: TrendingUp,
+                  title: t("services.toushi"),
+                  desc: "高利回り収益物件の選定、賃貸管理代行、オーナー様資産の最大化",
+                },
+              ].map((service, index) => (
+                <div
+                  key={index}
+                  className="bg-slate-50 border border-slate-200/90 rounded-lg p-6 hover:border-blue-400 hover:bg-white hover:shadow-xs transition-all"
+                >
+                  <div className="w-11 h-11 rounded-md bg-blue-50 text-blue-700 flex items-center justify-center mb-4 border border-blue-100">
+                    <service.icon size={22} />
+                  </div>
+                  <h3 className="text-base font-bold text-slate-900 mb-2">{service.title}</h3>
+                  <p className="text-xs text-slate-600 leading-relaxed">{service.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* --- 2. KEIBAI-KOUBAI SECTION --- */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50 border-b border-slate-200">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-12 gap-10 items-center">
+            <div className="md:col-span-6 space-y-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-emerald-50 text-emerald-800 text-xs font-bold border border-emerald-200">
+                <Search size={14} className="text-emerald-600" />
+                <span>CORE PILLAR 02 • AUCTION ADVISORY</span>
+              </div>
+
+              <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                {t("keibai.title1")}{" "}
+                <span className="text-emerald-700">{t("keibai.title2")}</span>
+                <span className="block text-xl sm:text-2xl font-bold text-slate-600 mt-1">
+                  {t("keibai.title3")}
+                </span>
+              </h2>
+
+              <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+                {t("keibai.desc1")}
+                <a
+                  href="https://www.keibai-koubai.com/"
+                  target="_blank"
+                  rel="noopener"
+                  className="text-emerald-700 font-bold hover:underline mx-1"
+                >
+                  {t("keibai.desc2")}
+                </a>
+                {t("keibai.desc3")}
+              </p>
+
+              <div className="flex flex-wrap gap-3 pt-2">
+                <a
+                  href="https://www.keibai-koubai.com/"
+                  target="_blank"
+                  rel="noopener"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-sm shadow-xs transition-colors"
+                >
+                  <span>{t("keibai.btn1")}</span>
+                  <ExternalLink size={15} />
+                </a>
+                <Link
+                  href={getHref("/keibai-koubai")}
+                  className="inline-flex items-center justify-center px-6 py-3 rounded-md border border-slate-300 text-slate-800 hover:bg-white font-semibold text-sm transition-colors"
+                >
+                  {t("keibai.btn2")}
+                </Link>
+              </div>
+            </div>
+
+            <div className="md:col-span-6">
+              <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-xs">
+                <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-slate-50">
+                  <Image
+                    src="/keibaikoubai1.png"
+                    alt="Keibai-Koubai Platform"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-contain"
+                  />
+                </div>
+                <div className="mt-3 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                  <span className="flex items-center gap-1.5 font-medium text-emerald-700">
+                    <CheckCircle2 size={14} /> 全国裁判所・税務公売データ連携
+                  </span>
+                  <span className="font-mono text-slate-400">keibai-koubai.com</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* --- 3. KIGYOULIST SECTION (LIGHT, SOFT ON THE EYES AS REQUESTED) --- */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-blue-50/50 via-slate-50 to-white text-slate-800 border-b border-slate-200">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-12 gap-10 items-center">
+            <div className="md:col-span-6 md:order-2 space-y-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-blue-100/80 text-blue-800 text-xs font-bold border border-blue-200">
+                <Database size={14} className="text-blue-700" />
+                <span>CORE PILLAR 03 • CORPORATE INTELLIGENCE</span>
+              </div>
+
+              <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                {t("kigyoulist.title1")}{" "}
+                <span className="text-blue-700">{t("kigyoulist.title2")}</span>
+                <span className="block text-xl sm:text-2xl font-bold text-slate-600 mt-1">
+                  {t("kigyoulist.title3")}
+                </span>
+              </h2>
+
+              <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+                {t("kigyoulist.desc1")}
+                <a
+                  href="https://kigyoulist.com/ja"
+                  target="_blank"
+                  rel="noopener"
+                  className="text-blue-700 font-bold hover:underline mx-1"
+                >
+                  {t("kigyoulist.desc2")}
+                </a>
+                {t("kigyoulist.desc3")}
+              </p>
+
+              <div className="flex flex-wrap gap-3 pt-2">
+                <a
+                  href="https://kigyoulist.com/ja"
+                  target="_blank"
+                  rel="noopener"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm shadow-xs transition-colors"
+                >
+                  <span>{t("kigyoulist.btn1")}</span>
+                  <ExternalLink size={15} />
+                </a>
+                <Link
+                  href={getHref("/kigyoulist")}
+                  className="inline-flex items-center justify-center px-6 py-3 rounded-md border border-slate-300 text-slate-800 hover:bg-white font-semibold text-sm transition-colors"
+                >
+                  {t("keibai.btn2")}
+                </Link>
+              </div>
+            </div>
+
+            <div className="md:col-span-6 md:order-1">
+              <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-xs">
+                <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-slate-50">
+                  <Image
+                    src="/kigyoulist.png"
+                    alt="Kigyoulist Platform"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-contain"
+                  />
+                </div>
+                <div className="mt-3 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                  <span className="flex items-center gap-1.5 font-medium text-blue-700">
+                    <CheckCircle2 size={14} /> 日本全国 法人企業データ即時抽出
+                  </span>
+                  <span className="font-mono text-slate-400">kigyoulist.com</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* --- 4. B2B SUPPLY (AKA-PLA) SECTION --- */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white border-b border-slate-200">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-12 gap-10 items-center">
+            <div className="md:col-span-6 space-y-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-slate-100 text-slate-800 text-xs font-bold border border-slate-200">
+                <Truck size={14} className="text-slate-700" />
+                <span>CORE PILLAR 04 • CROSS-BORDER TRADE</span>
+              </div>
+
+              <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                {t("akapla.title1")}{" "}
+                <span className="text-blue-700">{t("akapla.title2")}</span>
+                <span className="block text-xl sm:text-2xl font-bold text-slate-600 mt-1">
+                  {t("akapla.title3")}
+                </span>
+              </h2>
+
+              <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+                {t("akapla.desc1")}
+                <a
+                  href="https://www.aka-pla.com/"
+                  target="_blank"
+                  rel="noopener"
+                  className="text-blue-700 font-bold hover:underline mx-1"
+                >
+                  {t("akapla.desc2")}
+                </a>
+                {t("akapla.desc3")}
+              </p>
+
+              <div className="flex flex-wrap gap-3 pt-2">
+                <a
+                  href="https://www.aka-pla.com/"
+                  target="_blank"
+                  rel="noopener"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-blue-700 hover:bg-blue-800 text-white font-bold text-sm shadow-xs transition-colors"
+                >
+                  <span>{t("akapla.btn1")}</span>
+                  <ExternalLink size={15} />
+                </a>
+                <Link
+                  href={getHref("/b2b-supply")}
+                  className="inline-flex items-center justify-center px-6 py-3 rounded-md border border-slate-300 text-slate-800 hover:bg-slate-50 font-semibold text-sm transition-colors"
+                >
+                  {t("akapla.btn2")}
+                </Link>
+              </div>
+            </div>
+
+            <div className="md:col-span-6">
+              <div className="bg-slate-50 rounded-xl border border-slate-200 p-4 shadow-xs">
+                <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-white">
+                  <Image
+                    src="/akapla1.png"
+                    alt="Aka-pla B2B Platform"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-contain"
+                  />
+                </div>
+                <div className="mt-3 pt-3 border-t border-slate-200 flex items-center justify-between text-xs text-slate-500">
+                  <span className="flex items-center gap-1.5 font-medium text-slate-800">
+                    <CheckCircle2 size={14} /> 日越直結・工場直接調達＆品質検品
+                  </span>
+                  <span className="font-mono text-slate-400">aka-pla.com</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* --- CLIENT TESTIMONIALS --- */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50 border-b border-slate-200">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center max-w-2xl mx-auto mb-14">
+            <span className="text-xs font-bold text-blue-700 uppercase tracking-widest block mb-2">
+              TESTIMONIALS
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+              {t("testimonials.title")}
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {testimonials.map((item, index) => (
               <div
                 key={index}
-                className="bg-gray-50 p-8 rounded-3xl shadow-sm relative"
+                className="bg-white p-7 rounded-lg border border-slate-200 shadow-xs flex flex-col justify-between"
               >
-                <div className="absolute -top-12 left-1/2 -translate-x-1/2">
-                  <div className="relative w-24 h-24 rounded-full overflow-hidden border-4 border-white shadow-md">
+                <p className="text-slate-600 text-xs sm:text-sm leading-relaxed italic mb-6">
+                  &ldquo;{item.text}&rdquo;
+                </p>
+
+                <div className="flex items-center gap-3 pt-4 border-t border-slate-100">
+                  <div className="relative w-10 h-10 rounded-full overflow-hidden border border-slate-200 shrink-0">
                     <Image
-                      src={testimonial.avatar}
-                      alt={testimonial.name}
+                      src={item.avatar}
+                      alt={item.name}
                       fill
-                      sizes="96px"
+                      sizes="40px"
                       className="object-cover"
                     />
                   </div>
-                </div>
-
-                <div className="text-center mt-12">
-                  <p className="text-gray-700 text-sm leading-relaxed mb-6 italic">
-                    &quot;{testimonial.text}&quot;
-                  </p>
-                  <h4 className="text-lg font-bold text-gray-950">
-                    {testimonial.name}
-                  </h4>
-                  <p className="text-sm text-yellow-600 font-medium">
-                    {testimonial.role}
-                  </p>
+                  <div>
+                    <h4 className="text-sm font-bold text-slate-900">{item.name}</h4>
+                    <span className="text-xs text-blue-700 font-medium">{item.role}</span>
+                  </div>
                 </div>
               </div>
             ))}
@@ -404,11 +530,37 @@ export default function TQCHomepage() {
         </div>
       </section>
 
-      <style jsx global>{`
-        .swiper-pagination-bullet-active {
-          background: #eab308 !important;
-        }
-      `}</style>
+      {/* --- BOTTOM CTA CONSULTATION BANNER (LIGHT, INVITING TONE) --- */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-50 via-slate-50 to-blue-50 border-t border-slate-200 text-slate-900">
+        <div className="max-w-4xl mx-auto text-center space-y-5">
+          <span className="inline-block px-3 py-1 rounded bg-blue-100 text-blue-800 text-xs font-bold font-mono border border-blue-200">
+            CONSULTATION &amp; INQUIRY
+          </span>
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
+            不動産・競売投資・B2B調達のご相談はTQCへ
+          </h3>
+          <p className="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+            日本での物件探し、裁判所競売入札サポート、日越間での製品調達まで、経験豊富な専門チームが誠心誠意サポートいたします。
+          </p>
+
+          <div className="flex flex-wrap justify-center gap-3 pt-2">
+            <Link
+              href={getHref("/contact")}
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-md bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm shadow-xs transition-colors"
+            >
+              <Mail size={16} />
+              <span>{tNav("contact")}</span>
+            </Link>
+            <a
+              href="tel:0369071219"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-md bg-white hover:bg-slate-50 text-slate-800 border border-slate-300 font-semibold text-sm transition-colors shadow-xs"
+            >
+              <Phone size={16} className="text-blue-600" />
+              <span>(03) 6907-1219</span>
+            </a>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

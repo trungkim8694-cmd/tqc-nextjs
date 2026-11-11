@@ -61,7 +61,7 @@ export default function HumanResourcePage() {
         <div className="flex justify-center">
           <Link 
             href="/" 
-            className="flex items-center gap-2 border-2 border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white transition duration-300 font-bold py-3 px-8 rounded-xl text-sm"
+            className="flex items-center gap-2 border border-slate-300 text-slate-700 hover:bg-slate-100 hover:text-slate-900 transition duration-300 font-bold py-3 px-8 rounded-xl text-sm"
           >
             <ArrowLeft className="w-4 h-4" />
             <span>トップページへ戻る</span>
