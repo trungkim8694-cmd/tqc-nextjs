@@ -181,14 +181,6 @@ export default function ContactPage() {
                   </tr>
                   <tr>
                     <th className="py-3 px-4 bg-slate-100/70 text-slate-600 font-semibold">
-                      {tProfile("pic")}
-                    </th>
-                    <td className="py-3 px-4 text-slate-900 font-semibold">
-                      {tProfile("picVal")}
-                    </td>
-                  </tr>
-                  <tr>
-                    <th className="py-3 px-4 bg-slate-100/70 text-slate-600 font-semibold">
                       {tProfile("hours")}
                     </th>
                     <td className="py-3 px-4 text-slate-700">

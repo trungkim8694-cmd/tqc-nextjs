@@ -158,10 +158,6 @@ export default async function RootLayout({
                   <a href="tel:0369071219" className="hover:text-blue-700 transition-colors">
                     (03) 6907-1219
                   </a>
-                  <span className="text-slate-300 hidden sm:inline">|</span>
-                  <a href="tel:07056881999" className="hidden sm:inline hover:text-blue-700 transition-colors">
-                    070-5688-1999
-                  </a>
                 </div>
               </div>
 
