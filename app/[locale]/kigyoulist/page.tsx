@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronRight, Database, Search, Handshake, ExternalLink, CheckCircle2, Mail } from "lucide-react";
+import { Database, Search, Handshake, ExternalLink, CheckCircle2, Mail } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 
 export default async function KigyoulistPage({

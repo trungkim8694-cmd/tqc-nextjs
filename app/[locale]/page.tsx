@@ -32,7 +32,6 @@ import { useTranslations, useLocale } from "next-intl";
 export default function TQCHomepage() {
   const t = useTranslations("Homepage");
   const tNav = useTranslations("Navbar");
-  const tProfile = useTranslations("CompanyProfile");
   const locale = useLocale();
 
   const getHref = (path: string) => {

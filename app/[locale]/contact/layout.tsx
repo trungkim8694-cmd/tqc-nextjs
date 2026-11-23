@@ -8,7 +8,6 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'ContactPage' });
-  const tSeo = await getTranslations({ locale, namespace: 'SEO' });
 
   const canonicalUrl = locale === 'ja' ? 'https://tqc-jp.com/contact' : `https://tqc-jp.com/${locale}/contact`;
   const companyName = locale === 'vi' ? 'Công ty TQC株式会社' : locale === 'en' ? 'TQC Co., Ltd.' : 'TQC株式会社';

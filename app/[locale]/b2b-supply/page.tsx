@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Target, ShieldCheck, Truck, BarChart3, Globe, CheckCircle2, ExternalLink, Mail, Phone } from "lucide-react";
+import { Target, ShieldCheck, Truck, BarChart3, Globe, CheckCircle2, ExternalLink, Mail } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslations, useLocale } from "next-intl";

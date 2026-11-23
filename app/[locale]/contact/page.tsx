@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { useTranslations, useLocale } from "next-intl";
-import { Phone, Mail, Building2, MapPin, Clock, ShieldCheck, CheckCircle2, ExternalLink } from "lucide-react";
+import { ShieldCheck, CheckCircle2, ExternalLink } from "lucide-react";
 
 export default function ContactPage() {
   const t = useTranslations("ContactPage");
