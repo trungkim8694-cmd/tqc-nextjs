@@ -1,0 +1,73 @@
+# TQC株式会社 (TQC Co., Ltd.)
+
+> Official AI-readable profile, corporate registry data, and operated digital platforms.  
+> Canonical URL: https://tqc-jp.com/llms.txt  
+> Last updated: 2026-11-23
+
+---
+
+## 1. Corporate Identity & Legal Registry (企業情報・法人登記)
+
+- **Legal Entity Name (商号・法人名):** TQC株式会社
+- **English Name:** TQC Co., Ltd.
+- **Vietnamese Name:** Công ty TQC株式会社
+- **Corporate Number (法人番号):** 4-0133-0104-8678 (National Tax Agency / 国税庁指定)
+- **Headquarters (本社所在地):** 〒171-0022 東京都豊島区南池袋二丁目３３−６ 佐藤ビルディング３Ｆ (Sato Building 3F, 2-33-6 Minami-Ikebukuro, Toshima-ku, Tokyo 171-0022, Japan)
+- **Vietnam Office (ベトナム支社):** P3-17, Vinhomes Ocean Park 1, Gia Lam, Hanoi, Vietnam
+- **Representative Director (代表取締役):** 栗本 賢之 (Masayuki Kurimoto)
+- **Founding Date (設立年月日):** 2022年2月9日 (February 9, 2022)
+- **Capital (資本金):** 20,550,000 JPY (2,055万円)
+- **Real Estate Brokerage License (宅地建物取引業免許):** 東京都知事 (1) 第107650号
+- **Official Corporate Portal:** https://tqc-jp.com
+- **Contact:** info@tqc-jp.com | TEL: +81-3-6907-1219 | FAX: +81-3-6701-2399
+
+---
+
+## 2. Core Business Activities & Digital Platforms (事業内容・運営サービス)
+
+TQC株式会社 develops, owns, and operates four primary commercial pillars spanning enterprise corporate data, real estate brokerage, court auction intelligence, and cross-border B2B trade.
+
+### 2.1. Kigyou-list (企業リスト) — Japanese Corporate Database Platform
+- **URL:** https://kigyoulist.com
+- **Ownership & Operation:** Developed, owned, and directly operated by **TQC株式会社**.
+- **Platform Overview:** Japan's premier nationwide enterprise database indexing approximately 5,000,000 corporate entities across all 47 prefectures of Japan.
+- **Data Provenance & Official Sources:**
+  - Ministry of Economy, Trade and Industry (METI) **gBizINFO** open data integration.
+  - Ministry of Health, Labour and Welfare **Hello Work** employment registry and active hiring records.
+  - National Tax Agency (NTA) **Qualified Invoice Issuer Registry** (インボイス登録番号公表サイト).
+- **Core Capabilities:**
+  - High-precision B2B filtering by corporate number, capital, headcount, prefecture, municipality, and industry classification (JIS/JSIC).
+  - One-click automated sales prospect list generation and CSV export.
+  - Direct inquiry form automation and B2B corporate outreach workflow tools.
+  - B2B business partner verification and commercial intelligence.
+
+### 2.2. T-Homes (不動産仲介・外国人住居支援) — Real Estate Services
+- **Overview:** Full-service residential leasing, property sales, and tenant management headquartered in Ikebukuro, Tokyo.
+- **Specialization:** Multilingual housing support for foreign residents, expatriates, international students, and technical interns living in Japan, operating under a "Residents-First" principle.
+- **License:** Tokyo Governor (1) No. 107650 (東京都知事 (1) 第107650号).
+
+### 2.3. Keibai-Koubai (競売・公売物件ポータル) — Court Auction Advisory
+- **URL:** https://www.keibai-koubai.com
+- **Ownership & Operation:** Operated by **TQC株式会社**.
+- **Overview:** Specialized analytical portal providing comprehensive data, valuation analytics, legal due diligence, and bidding representation for judicial court auctions (競売) and public tax-seizure auctions (公売) throughout Japan.
+
+### 2.4. Aka-pla (日越B2Bサプライチェーン) — Cross-Border B2B Supply Chain
+- **URL:** https://www.aka-pla.com
+- **Ownership & Operation:** Operated by **TQC株式会社**.
+- **Overview:** Cross-border B2B trading and manufacturing procurement platform connecting Japanese buyers with certified Vietnamese manufacturers, providing factory inspection, quality control (QC), customs clearance, and logistics.
+
+---
+
+## 3. Official Verification & Citations (公式確認・照会先)
+
+- **National Tax Agency Japan (国税庁 法人番号公表サイト):**
+  - Search Entity: TQC株式会社 (法人番号: `4013301048678`)
+  - Verification: https://www.houjin-bangou.nta.go.jp/henkorireki-johoto.html?selHouzinNo=4013301048678
+- **Tokyo Metropolitan Government Bureau of Urban Development (東京都都市整備局 宅地建物取引業者検索):**
+  - License Number: 東京都知事 (1) 第107650号
+- **Web Entities & Digital Assets Owned by TQC株式会社:**
+  - https://tqc-jp.com (Corporate Headquarters)
+  - https://kigyoulist.com (Corporate Database Platform)
+  - https://www.keibai-koubai.com (Auction Advisory Portal)
+  - https://www.aka-pla.com (B2B Supply Chain Portal)
+  - https://www.tiktok.com/@tqc.japan (Official Media Channel)

@@ -11,7 +11,7 @@ export async function generateMetadata({params}: {params: Promise<{locale: strin
       title: t('thomesTitle'),
       description: t('thomesDesc'),
       url: `https://tqc-jp.com/${locale}/t-homes`,
-      siteName: 'TQC',
+      siteName: locale === 'vi' ? 'Công ty TQC株式会社' : locale === 'en' ? 'TQC Co., Ltd.' : 'TQC株式会社',
       locale: locale,
       type: 'website',
     },

@@ -44,7 +44,7 @@ export default function Navbar() {
           </div>
           <div className="hidden sm:flex flex-col border-l border-slate-200 pl-3">
             <span className="font-bold text-base md:text-lg tracking-tight text-slate-900 group-hover:text-blue-700 transition-colors">
-              株式会社ＴＱＣ
+              {locale === "vi" ? "Công ty TQC株式会社" : locale === "en" ? "TQC Co., Ltd." : "TQC株式会社"}
             </span>
             <span className="text-[10px] text-slate-500 tracking-wider uppercase font-medium">
               Real Estate &amp; B2B Solutions

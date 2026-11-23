@@ -11,7 +11,7 @@ export async function generateMetadata({params}: {params: Promise<{locale: strin
       title: t('b2bTitle'),
       description: t('b2bDesc'),
       url: `https://tqc-jp.com/${locale}/b2b-supply`,
-      siteName: 'TQC',
+      siteName: locale === 'vi' ? 'Công ty TQC株式会社' : locale === 'en' ? 'TQC Co., Ltd.' : 'TQC株式会社',
       locale: locale,
       type: 'website',
     },

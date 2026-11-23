@@ -2,12 +2,13 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { useTranslations } from "next-intl";
-import { Phone, Mail, Building2, MapPin, Clock, ShieldCheck, CheckCircle2 } from "lucide-react";
+import { useTranslations, useLocale } from "next-intl";
+import { Phone, Mail, Building2, MapPin, Clock, ShieldCheck, CheckCircle2, ExternalLink } from "lucide-react";
 
 export default function ContactPage() {
   const t = useTranslations("ContactPage");
   const tProfile = useTranslations("CompanyProfile");
+  const locale = useLocale();
 
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -177,6 +178,64 @@ export default function ContactPage() {
                     </th>
                     <td className="py-3 px-4 text-slate-900 font-mono font-medium">
                       {tProfile("telVal")}
+                    </td>
+                  </tr>
+                  <tr>
+                    <th className="py-3 px-4 bg-slate-100/70 text-slate-600 font-semibold align-top">
+                      {tProfile("business")}
+                    </th>
+                    <td className="py-3 px-4 text-slate-800 leading-relaxed">
+                      <div className="space-y-1.5">
+                        <div className="font-semibold text-slate-900">
+                          <span>1. </span>
+                          <span>
+                            {locale === "vi" 
+                              ? "Phát triển & Vận hành Nền tảng Dữ liệu Doanh nghiệp Nhật Bản: " 
+                              : locale === "en" 
+                              ? "Development & Operation of Japanese Corporate Database Platform: " 
+                              : "日本最大級の法人企業データベース開発・運営："}
+                          </span>
+                          <a 
+                            href="https://kigyoulist.com" 
+                            target="_blank" 
+                            rel="noopener" 
+                            className="text-blue-700 hover:underline font-bold inline-flex items-center gap-1 ml-1"
+                          >
+                            <span>Kigyou-list (https://kigyoulist.com)</span>
+                            <ExternalLink size={12} />
+                          </a>
+                        </div>
+                        <p className="text-xs text-slate-600 pl-4 border-l-2 border-blue-200">
+                          {locale === "vi"
+                            ? "Tổng hợp khoảng 5 triệu pháp nhân toàn quốc từ các nguồn mở chính thống (gBizINFO, Hello Work, đăng ký hóa đơn Invoice...), hỗ trợ tìm kiếm B2B, xuất danh sách khách hàng và tự động hóa tiếp cận doanh nghiệp."
+                            : locale === "en"
+                            ? "Aggregating approximately 5 million entities nationwide from official open registries (gBizINFO, Hello Work, Invoice registry) for B2B intelligence, customer list export, and company outreach automation."
+                            : "全国約500万社のオープンデータ・公的情報（gBizINFO、ハローワーク、インボイス等）を集約したB2B企業検索・営業リスト作成・アプローチ自動化支援。"}
+                        </p>
+                        <div className="text-slate-800 pt-1 space-y-1">
+                          <p>
+                            2. {locale === "vi"
+                              ? "Dịch vụ Môi giới và Quản lý Bất động sản tại Nhật Bản (T-Homes)"
+                              : locale === "en"
+                              ? "Residential real estate brokerage & management for international residents (T-Homes)"
+                              : "外国人向け不動産仲介・管理事業（T-Homes）"}
+                          </p>
+                          <p>
+                            3. {locale === "vi"
+                              ? "Khảo sát, thẩm định và tư vấn đấu thầu BĐS Đấu giá Tòa án & Công trường (Keibai-Koubai)"
+                              : locale === "en"
+                              ? "Court auction and public auction real estate advisory and legal due diligence (Keibai-Koubai)"
+                              : "裁判所競売物件・公売物件の調査分析および入札サポート（Keibai-Koubai）"}
+                          </p>
+                          <p>
+                            4. {locale === "vi"
+                              ? "Xây dựng Chuỗi cung ứng B2B thương mại và kết nối sản xuất Việt Nam - Nhật Bản (Aka-pla)"
+                              : locale === "en"
+                              ? "Cross-border Japan-Vietnam B2B supply chain procurement & manufacturing matching (Aka-pla)"
+                              : "日越B2Bサプライチェーン構築および調達・製造マッチング支援（Aka-pla）"}
+                          </p>
+                        </div>
+                      </div>
                     </td>
                   </tr>
                   <tr>

@@ -1,4 +1,4 @@
-{
+Hãy đẩy dự án lên production.{
   "Navbar": {
     "home": "HOME",
     "thomes": "T-HOMES Real Estate",
@@ -19,7 +19,7 @@
     "heading": "Company Profile",
     "subheading": "CORPORATE OVERVIEW",
     "companyName": "Company Name",
-    "companyNameVal": "TQC Co., Ltd. (株式会社ＴＱＣ)",
+    "companyNameVal": "TQC Co., Ltd. (TQC株式会社)",
     "rep": "Representative Director",
     "repVal": "Masayuki Kurimoto (栗本 賢之)",
     "corpNo": "Corporate Number",
@@ -37,7 +37,9 @@
     "license": "Licenses & Permits",
     "licenseVal": "Real Estate Brokerage License: Tokyo Governor (1) No. 107650",
     "hours": "Business Hours",
-    "hoursVal": "9:00 - 18:00 (Closed Wed & Sun)"
+    "hoursVal": "9:00 - 18:00 (Closed Wed & Sun)",
+    "business": "Business Activities",
+    "businessVal": "1. Development and operation of the Japanese Corporate Database Platform \"Kigyou-list\" (https://kigyoulist.com), aggregating official data of approximately 5 million entities nationwide from government open sources (gBizINFO, Hello Work, Invoice registry) for B2B search, automated customer list export, and company outreach automation\n2. Residential real estate brokerage & property management for international residents in Japan (T-Homes)\n3. Japanese court auction and public auction real estate research, legal due diligence, and bidding advisory (Keibai-Koubai)\n4. Cross-border Japan-Vietnam B2B supply chain procurement and manufacturing matching (Aka-pla)"
   },
   "ContactPage": {
     "title": "CONTACT US",
@@ -65,8 +67,8 @@
     "fail": "Failed to send message. Please check your internet connection and try again."
   },
   "Homepage": {
-    "metaTitle": "TQC Co., Ltd. | Japanese Real Estate, Auction Advisory & B2B Supply Chain",
-    "metaDesc": "TQC Co., Ltd. is an integrated solutions provider based in Tokyo, offering real estate brokerage (T-Homes), court auction advisory (Keibai-Koubai), corporate intelligence (Kigyoulist), and Japan-Vietnam B2B trade (Aka-pla).",
+    "metaTitle": "TQC Co., Ltd. | Japanese Corporate Database Platform (Kigyou-list), Real Estate & B2B Supply Chain",
+    "metaDesc": "TQC Co., Ltd. is an integrated solutions provider based in Tokyo, operating the Japanese Corporate Database Platform (Kigyou-list) covering 5 million companies, alongside real estate brokerage (T-Homes), court auction advisory (Keibai-Koubai), and B2B trade (Aka-pla).",
     "hero": {
       "slide1Title": "Real Estate Services for Foreign Residents",
       "slide1Sub": "End-to-end guidance from rental and home purchases to post-move property care",
@@ -95,14 +97,14 @@
       "floatingBadge": "REAL ESTATE"
     },
     "kigyoulist": {
-      "badge": "B2B Matching • Data Platform",
+      "badge": "5 Million Companies • B2B Corporate Database",
       "title1": "Comprehensive Nationwide",
       "title2": "Corporate Intelligence Platform",
       "title3": "From high-precision sales targeting to B2B business matching",
-      "desc1": "TQC Co., Ltd. empowers businesses expanding into the Japanese market. Our proprietary platform,",
-      "desc2": "Kigyoulist",
-      "desc3": ", analyzes data across millions of registered companies, filtering by industry, geography, and scale to generate qualified outreach lists and facilitate cross-border partnerships.",
-      "btn1": "Try Kigyoulist",
+      "desc1": "Developed and operated by TQC Co., Ltd., the Japanese Corporate Database Platform \"",
+      "desc2": "Kigyou-list",
+      "desc3": "\" aggregates approximately 5 million entities across Japan from official open registries (gBizINFO, Hello Work, Invoice). It powers automated sales list generation and verified B2B matching.",
+      "btn1": "Explore Kigyou-list",
       "floatingBadge": "SYSTEM ONLINE"
     },
     "akapla": {
@@ -128,31 +130,31 @@
     }
   },
   "KigyoulistPage": {
-    "badge": "B2B Matching • Corporate Intelligence Platform",
+    "badge": "5 Million Entities • Japanese Corporate Database Platform",
     "title1": "Expanding Business Horizons",
-    "title2": "Kigyoulist",
-    "desc": "Leveraging vast corporate datasets and AI analytics, we propel your enterprise forward from target prospecting to strategic alliances.",
-    "btn": "Visit Kigyoulist Official Website",
-    "floatingBadge": "SYSTEM ONLINE",
-    "h2_1": "What is Kigyoulist?",
-    "p1": "In modern corporate strategy, reliable business intelligence is the key to sustainable advantage. Highly recommended by TQC Co., Ltd.,",
-    "p1_link": "Kigyoulist",
-    "p1_after": "is an advanced database platform that aggregates and indexes Japanese corporate information for rapid search, segmentation, and export.",
-    "p2": "It serves as an essential tool for all B2B initiatives, from assembling qualified sales pipelines to establishing new commercial ties between Japanese and international enterprises.",
+    "title2": "Kigyou-list (Corporate Database)",
+    "desc": "Developed and operated by TQC Co., Ltd. (TQC株式会社), Kigyou-list is Japan's premier Corporate Database Platform indexing approximately 5 million entities across Japan from official open data for B2B intelligence, lead generation, and company outreach automation.",
+    "btn": "Visit Kigyou-list Official Website",
+    "floatingBadge": "5M+ Companies",
+    "h2_1": "What is Kigyou-list?",
+    "p1": "In modern corporate strategy, reliable business intelligence is the key to sustainable advantage. Developed and operated by TQC Co., Ltd.,",
+    "p1_link": "Japanese Corporate Database Platform \"Kigyou-list\"",
+    "p1_after": "aggregates approximately 5 million entities nationwide from official open data sources including METI's gBizINFO, Hello Work employment registries, and the National Invoice System.",
+    "p2": "It provides comprehensive capabilities for corporate sales teams, business developers, and international firms expanding into Japan—from precision industry filtering to automated prospect list exports and direct outreach automation.",
     "h3": "3 Core Value Pillars",
-    "v1Title": "High-Precision Filtering",
-    "v1Desc": "Quickly isolate prospect companies by industry classification, capital, employee headcount, and geographical location.",
-    "v2Title": "Automated List Generation",
-    "v2Desc": "Export actionable contact lists in one click, drastically shortening marketing and business development cycles.",
-    "v3Title": "B2B Cross-Border Matching",
-    "v3Desc": "Connect corporate supply chains between Japan and Southeast Asia to build enduring partnerships.",
-    "h2_2": "Why TQC Recommends Kigyoulist",
-    "p3": "While expanding our core services in \"Japan-Vietnam B2B Supply Chains\" and \"Real Estate Brokerage & Auction Consultation\", TQC Co., Ltd. realized that accurate, data-driven intelligence is indispensable for successful partnerships. Therefore, by utilizing Kigyoulist as a",
-    "p3_link": "B2B Matching Platform",
-    "p3_after": ", we are now able to provide highly accurate proposals and speedy matching to our client companies.",
-    "boxTitle": "Accelerate Your Business Growth Today",
-    "boxDesc": "Whether you are prospecting for new corporate clients or seeking verified partners in Japan, test Kigyoulist's robust enterprise database today.",
-    "boxBtn": "Explore Corporate Database Tool"
+    "v1Title": "High-Precision Filtering (5M Companies)",
+    "v1Desc": "Quickly isolate prospect companies by industry classification, capital, employee headcount, and geographical location across all prefectures.",
+    "v2Title": "Automated List Generation & CSV Export",
+    "v2Desc": "Export actionable contact and prospect lists in one click, drastically shortening marketing and business development research cycles.",
+    "v3Title": "B2B Cross-Border Matching & Automation",
+    "v3Desc": "Connect corporate supply chains between Japan and international markets, while automating business inquiry workflows.",
+    "h2_2": "Why TQC Co., Ltd. Operates Kigyou-list",
+    "p3": "Drawing on our core expertise in cross-border Japan-Vietnam B2B supply chains and real estate investment, TQC Co., Ltd. developed and directly operates",
+    "p3_link": "Japanese Corporate Database Platform \"Kigyou-list\"",
+    "p3_after": "to eliminate corporate information asymmetries. Through rigorous data aggregation and automation, we empower enterprises with transparent, verified business intelligence.",
+    "boxTitle": "Accelerate Your B2B Growth Today",
+    "boxDesc": "Whether you are prospecting for new corporate clients or seeking verified partners in Japan, test Kigyou-list's robust enterprise database today.",
+    "boxBtn": "Explore Kigyou-list Platform"
   },
   "B2BSupplyPage": {
     "badge": "Vietnam - Japan Supply Chain Solution",
@@ -261,12 +263,12 @@
     "ot3Desc": "Specialized coordination with universities and language schools to accommodate newly arriving students and engineers."
   },
   "SEO": {
-    "title": "TQC Co., Ltd. | Japanese Real Estate, Auction Advisory & B2B Supply Chain",
-    "description": "TQC Co., Ltd. is an integrated solutions provider in Tokyo offering foreigner-friendly real estate (T-Homes), court auction advisory (Keibai-Koubai), corporate intelligence (Kigyoulist), and B2B trade (Aka-pla).",
+    "title": "TQC Co., Ltd. | Japanese Corporate Database Platform (Kigyou-list), Real Estate & B2B Supply Chain",
+    "description": "TQC Co., Ltd. is an integrated solutions provider based in Tokyo, operating the Japanese Corporate Database Platform (Kigyou-list) covering 5 million companies, alongside real estate brokerage (T-Homes), court auction advisory (Keibai-Koubai), and B2B trade (Aka-pla).",
     "b2bTitle": "Aka-pla B2B Supply Chain | TQC Co., Ltd.",
     "b2bDesc": "B2B trading and procurement platform connecting Japanese enterprises directly with manufacturers in Vietnam.",
-    "kigyoulistTitle": "Kigyoulist (Corporate Database) | TQC Co., Ltd.",
-    "kigyoulistDesc": "Nationwide corporate intelligence and B2B business matching platform in Japan.",
+    "kigyoulistTitle": "Kigyou-list Japanese Corporate Database Platform (5 Million Companies) | TQC Co., Ltd.",
+    "kigyoulistDesc": "Japanese Corporate Database Platform indexing 5 million entities across Japan from official open data. Automated sales lists and B2B matching operated by TQC Co., Ltd.",
     "keibaiTitle": "Keibai-Koubai Real Estate Auction Portal | TQC Co., Ltd.",
     "keibaiDesc": "Data-driven court auction property investment and legal due diligence in Japan.",
     "thomesTitle": "T-HOMES Real Estate | TQC Co., Ltd.",

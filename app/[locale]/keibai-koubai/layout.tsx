@@ -11,7 +11,7 @@ export async function generateMetadata({params}: {params: Promise<{locale: strin
       title: t('keibaiTitle'),
       description: t('keibaiDesc'),
       url: `https://tqc-jp.com/${locale}/keibai-koubai`,
-      siteName: 'TQC',
+      siteName: locale === 'vi' ? 'Công ty TQC株式会社' : locale === 'en' ? 'TQC Co., Ltd.' : 'TQC株式会社',
       locale: locale,
       type: 'website',
     },

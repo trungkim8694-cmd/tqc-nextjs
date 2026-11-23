@@ -11,15 +11,16 @@ export async function generateMetadata({
   const tSeo = await getTranslations({ locale, namespace: 'SEO' });
 
   const canonicalUrl = locale === 'ja' ? 'https://tqc-jp.com/contact' : `https://tqc-jp.com/${locale}/contact`;
+  const companyName = locale === 'vi' ? 'Công ty TQC株式会社' : locale === 'en' ? 'TQC Co., Ltd.' : 'TQC株式会社';
 
   return {
-    title: `${t('title')} | TQC株式会社`,
+    title: `${t('title')} | ${companyName}`,
     description: t('formSubtitle'),
     openGraph: {
-      title: `${t('title')} | TQC株式会社`,
+      title: `${t('title')} | ${companyName}`,
       description: t('formSubtitle'),
       url: canonicalUrl,
-      siteName: 'TQC株式会社',
+      siteName: companyName,
       locale: locale,
       type: 'website',
     },

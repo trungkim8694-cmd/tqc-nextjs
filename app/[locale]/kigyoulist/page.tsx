@@ -43,7 +43,7 @@ export default async function KigyoulistPage({
 
               <div className="flex flex-wrap gap-3 pt-2">
                 <a
-                  href="https://kigyoulist.com/ja"
+                  href="https://kigyoulist.com"
                   target="_blank"
                   rel="noopener"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm shadow-xs transition-colors"
@@ -99,7 +99,7 @@ export default async function KigyoulistPage({
           <p className="text-slate-700 text-sm sm:text-base leading-relaxed mb-4">
             {t("p1")}{" "}
             <a
-              href="https://kigyoulist.com/ja"
+              href="https://kigyoulist.com"
               target="_blank"
               rel="noopener"
               className="text-blue-700 font-bold hover:underline mx-1"
@@ -148,7 +148,7 @@ export default async function KigyoulistPage({
             <p className="text-slate-700 text-sm sm:text-base leading-relaxed mb-6">
               {t("p3")}{" "}
               <a
-                href="https://kigyoulist.com/ja"
+                href="https://kigyoulist.com"
                 target="_blank"
                 rel="noopener"
                 className="text-blue-700 font-bold hover:underline mx-1"
@@ -158,11 +158,54 @@ export default async function KigyoulistPage({
               {t("p3_after")}
             </p>
 
+            {/* Scale, Data Sources & Target B2B Audience Grid */}
+            <div className="grid sm:grid-cols-2 gap-4 mb-8">
+              <div className="bg-slate-50 p-4 rounded-lg border border-slate-200">
+                <h4 className="font-bold text-slate-900 text-xs uppercase tracking-wider mb-2 text-blue-700">
+                  {locale === "vi" ? "Quy mô & Nguồn dữ liệu chính thống" : locale === "en" ? "Data Scale & Official Sources" : "データ規模と公的情報源"}
+                </h4>
+                <ul className="text-xs text-slate-600 space-y-1.5">
+                  <li className="flex items-start gap-1.5">
+                    <CheckCircle2 size={13} className="text-emerald-600 shrink-0 mt-0.5" />
+                    <span>{locale === "vi" ? "Quy mô: Hơn 5.000.000 pháp nhân trên toàn bộ 47 tỉnh thành Nhật Bản." : locale === "en" ? "Scale: Approx. 5,000,000 entities across all 47 Japanese prefectures." : "全国47都道府県・約500万社の法人企業データを完全網羅。"}</span>
+                  </li>
+                  <li className="flex items-start gap-1.5">
+                    <CheckCircle2 size={13} className="text-emerald-600 shrink-0 mt-0.5" />
+                    <span>{locale === "vi" ? "Nguồn mở METI: Tích hợp dữ liệu doanh nghiệp gBizINFO của Bộ Kinh tế & Công nghiệp." : locale === "en" ? "METI Open Data: Integrated gBizINFO registry from the Ministry of Economy, Trade & Industry." : "経済産業省 gBizINFO オープンデータを標準統合。"}</span>
+                  </li>
+                  <li className="flex items-start gap-1.5">
+                    <CheckCircle2 size={13} className="text-emerald-600 shrink-0 mt-0.5" />
+                    <span>{locale === "vi" ? "Việc làm & Thuế: Cập nhật dữ liệu tuyển dụng Hello Work và mã hóa đơn Invoice NTA." : locale === "en" ? "Employment & Tax: Live job data via Hello Work & National Tax Agency Invoice registration." : "ハローワーク求人動向、国税庁適格請求書(インボイス)登録情報。"}</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-slate-50 p-4 rounded-lg border border-slate-200">
+                <h4 className="font-bold text-slate-900 text-xs uppercase tracking-wider mb-2 text-blue-700">
+                  {locale === "vi" ? "Đối tượng khách hàng B2B trọng tâm" : locale === "en" ? "Target B2B Audience" : "主要なB2B利用対象"}
+                </h4>
+                <ul className="text-xs text-slate-600 space-y-1.5">
+                  <li className="flex items-start gap-1.5">
+                    <CheckCircle2 size={13} className="text-emerald-600 shrink-0 mt-0.5" />
+                    <span>{locale === "vi" ? "Đội ngũ Kinh doanh & Marketing (Sales / BD): Tự động xuất danh sách chào hàng B2B." : locale === "en" ? "Sales & Marketing Teams: Automated prospect list generation and targeting." : "法人営業・マーケティング部門：アタックリストの自動生成と商談獲得。"}</span>
+                  </li>
+                  <li className="flex items-start gap-1.5">
+                    <CheckCircle2 size={13} className="text-emerald-600 shrink-0 mt-0.5" />
+                    <span>{locale === "vi" ? "Doanh nghiệp FDI / Nước ngoài: Khảo sát đối tác và mở rộng vào thị trường Nhật Bản." : locale === "en" ? "Foreign & FDI Enterprises: Market entry intelligence and partner discovery in Japan." : "外資系・海外進出企業：日本市場への参入調査および提携先発掘。"}</span>
+                  </li>
+                  <li className="flex items-start gap-1.5">
+                    <CheckCircle2 size={13} className="text-emerald-600 shrink-0 mt-0.5" />
+                    <span>{locale === "vi" ? "Công ty Tuyển dụng & Headhunting: Tìm kiếm doanh nghiệp đang có nhu cầu nhân sự cao." : locale === "en" ? "Recruitment & HR Agencies: Pinpoint active hiring demand across industries." : "人材紹介・採用支援事業者：求人需要の高い成長企業の迅速特定。"}</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
             <div className="bg-blue-50/70 border-l-4 border-blue-700 p-5 rounded-r-lg">
               <h4 className="font-bold text-slate-900 text-sm mb-1.5">{t("boxTitle")}</h4>
               <p className="text-xs text-slate-700 mb-4 leading-relaxed">{t("boxDesc")}</p>
               <a
-                href="https://kigyoulist.com/ja"
+                href="https://kigyoulist.com"
                 target="_blank"
                 rel="noopener"
                 className="inline-flex items-center gap-1.5 bg-blue-700 hover:bg-blue-800 text-white font-bold text-xs py-2.5 px-5 rounded-md transition-colors"
@@ -186,7 +229,7 @@ export default async function KigyoulistPage({
           </p>
           <div className="flex flex-wrap justify-center gap-3 pt-2">
             <a
-              href="https://kigyoulist.com/ja"
+              href="https://kigyoulist.com"
               target="_blank"
               rel="noopener"
               className="inline-flex items-center gap-2 px-8 py-3.5 rounded-md bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm shadow-xs transition-colors"

@@ -43,7 +43,7 @@ export async function generateMetadata({
       title: t("title"),
       description: t("description"),
       url: canonicalUrl,
-      siteName: "TQC株式会社",
+      siteName: locale === "vi" ? "Công ty TQC株式会社" : locale === "en" ? "TQC Co., Ltd." : "TQC株式会社",
       locale: locale,
       type: "website",
       images: [
@@ -51,7 +51,7 @@ export async function generateMetadata({
           url: "https://tqc-jp.com/logo.png",
           width: 800,
           height: 600,
-          alt: "TQC株式会社",
+          alt: locale === "vi" ? "Công ty TQC株式会社" : locale === "en" ? "TQC Co., Ltd." : "TQC株式会社",
         },
       ],
     },
@@ -92,8 +92,8 @@ export default async function RootLayout({
       {
         "@type": "Organization",
         "@id": "https://tqc-jp.com/#organization",
-        "name": "株式会社ＴＱＣ",
-        "alternateName": ["TQC株式会社", "TQC Co., Ltd."],
+        "name": "TQC株式会社",
+        "alternateName": ["Công ty TQC株式会社", "TQC Co., Ltd.", "TQC Inc."],
         "url": "https://tqc-jp.com",
         "logo": "https://tqc-jp.com/logo.png",
         "taxID": "4013301048678",
@@ -106,7 +106,59 @@ export default async function RootLayout({
           "postalCode": "171-0022",
           "addressCountry": "JP"
         },
-        "telephone": "+81-3-6907-1219"
+        "telephone": "+81-3-6907-1219",
+        "sameAs": [
+          "https://kigyoulist.com",
+          "https://www.keibai-koubai.com",
+          "https://www.aka-pla.com",
+          "https://www.tiktok.com/@tqc.japan"
+        ],
+        "owns": [
+          {
+            "@type": "WebApplication",
+            "@id": "https://kigyoulist.com/#webapp",
+            "name": "Kigyou-list (企業リスト)",
+            "url": "https://kigyoulist.com",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "All",
+            "description": "日本最大級500万社の法人企業データベースプラットフォーム。gBizINFO、ハローワーク、インボイス登録等のオープンデータを統合したB2B企業検索・営業リスト作成サービス。 / Japanese Corporate Database Platform aggregating 5 million registered entities nationwide from official open data for B2B intelligence and lead generation.",
+            "creator": {
+              "@id": "https://tqc-jp.com/#organization"
+            },
+            "provider": {
+              "@id": "https://tqc-jp.com/#organization"
+            }
+          },
+          {
+            "@type": "Dataset",
+            "@id": "https://kigyoulist.com/#dataset",
+            "name": "Japan Corporate Registry & B2B Database (全国約500万社 法人企業データベース)",
+            "url": "https://kigyoulist.com",
+            "description": "日本全国約500万法人の商号、所在地、法人番号、業種、財務・求人情報を網羅したB2Bデータベース。 / Comprehensive B2B dataset of approximately 5 million Japanese corporate entities indexed from official public records.",
+            "creator": {
+              "@id": "https://tqc-jp.com/#organization"
+            },
+            "publisher": {
+              "@id": "https://tqc-jp.com/#organization"
+            }
+          }
+        ],
+        "makesOffer": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "WebApplication",
+              "@id": "https://kigyoulist.com/#webapp"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Dataset",
+              "@id": "https://kigyoulist.com/#dataset"
+            }
+          }
+        ]
       },
       {
         "@type": "RealEstateAgent",
@@ -115,6 +167,9 @@ export default async function RootLayout({
         "url": "https://tqc-jp.com",
         "telephone": "+81-3-6907-1219",
         "priceRange": "$$",
+        "parentOrganization": {
+          "@id": "https://tqc-jp.com/#organization"
+        },
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "南池袋二丁目３３−６ 佐藤ビルディング３Ｆ",
@@ -208,14 +263,20 @@ export default async function RootLayout({
                 <div className="md:col-span-5 space-y-4">
                   <div className="flex items-center gap-3">
                     <span className="w-1.5 h-6 bg-blue-600 rounded-sm"></span>
-                    <h2 className="text-xl font-bold text-slate-900 tracking-tight">株式会社ＴＱＣ</h2>
+                    <h2 className="text-xl font-bold text-slate-900 tracking-tight">
+                      {locale === "vi" ? "Công ty TQC株式会社" : "TQC株式会社"}
+                    </h2>
                     <span className="text-xs px-2 py-0.5 rounded bg-white text-slate-600 border border-slate-300 font-medium">
                       TQC Co., Ltd.
                     </span>
                   </div>
 
                   <p className="text-xs text-slate-600 leading-relaxed">
-                    日本における外国人向け不動産仲介（T-Homes）、裁判所競売・公売物件ポータル（Keibai-Koubai）、日越B2Bサプライチェーン（Aka-pla）、企業データベース（Kigyoulist）を展開する総合ソリューション企業。
+                    {locale === "vi"
+                      ? "Doanh nghiệp cung cấp giải pháp toàn diện: Môi giới BĐS Nhật Bản cho người nước ngoài (T-Homes), Cổng thông tin Đấu giá BĐS (Keibai-Koubai), Chuỗi cung ứng B2B Nhật-Việt (Aka-pla) và Dữ liệu doanh nghiệp (Kigyoulist)."
+                      : locale === "en"
+                        ? "An integrated solutions provider based in Tokyo, offering foreigner-friendly real estate (T-Homes), court auction advisory (Keibai-Koubai), corporate intelligence (Kigyoulist), and Japan-Vietnam B2B trade (Aka-pla)."
+                        : "日本における外国人向け不動産仲介（T-Homes）、裁判所競売・公売物件ポータル（Keibai-Koubai）、日越B2Bサプライチェーン（Aka-pla）、企業データベース（Kigyoulist）を展開する総合ソリューション企業。"}
                   </p>
 
                   <div className="pt-2 space-y-2 text-xs text-slate-700 border-t border-slate-200">
@@ -249,7 +310,7 @@ export default async function RootLayout({
                 {/* Col 2: Services & Quick Links */}
                 <div className="md:col-span-3 space-y-4">
                   <h3 className="text-sm font-bold text-slate-900 uppercase tracking-wider border-b border-slate-200 pb-2">
-                    事業内容・サービス
+                    {locale === "vi" ? "Dịch vụ & Liên kết" : locale === "en" ? "Services & Links" : "事業内容・サービス"}
                   </h3>
                   <ul className="space-y-2.5 text-xs text-slate-700">
                     <li>
@@ -316,7 +377,7 @@ export default async function RootLayout({
                 {/* Col 3: Map & Contact Info */}
                 <div className="md:col-span-4 space-y-4">
                   <h3 className="text-sm font-bold text-slate-900 uppercase tracking-wider border-b border-slate-200 pb-2">
-                    アクセス (本社・池袋)
+                    {locale === "vi" ? "Địa chỉ (Trụ sở Ikebukuro)" : locale === "en" ? "Access (Ikebukuro HQ)" : "アクセス (本社・池袋)"}
                   </h3>
                   <div className="w-full h-48 bg-white rounded-lg overflow-hidden border border-slate-200 shadow-xs">
                     <iframe
@@ -327,12 +388,16 @@ export default async function RootLayout({
                       allowFullScreen={true}
                       loading="lazy"
                       referrerPolicy="no-referrer-when-downgrade"
-                      title="株式会社ＴＱＣ 本社アクセスマップ"
+                      title="TQC株式会社 本社アクセスマップ"
                     ></iframe>
                   </div>
                   <div className="space-y-1">
                     <p className="text-xs text-slate-500">
-                      JR・東京メトロ「池袋駅」東口 徒歩6分 / 有楽町線「東池袋駅」徒歩3分
+                      {locale === "vi"
+                        ? "Ga Ikebukuro (JR/Tokyo Metro) Cửa Đông đi bộ 6 phút / Ga Higashi-Ikebukuro đi bộ 3 phút"
+                        : locale === "en"
+                          ? "6-min walk from Ikebukuro Station East Exit / 3-min walk from Higashi-Ikebukuro Station"
+                          : "JR・東京メトロ「池袋駅」東口 徒歩6分 / 有楽町線「東池袋駅」徒歩3分"}
                     </p>
                     <a
                       href="https://maps.google.com/?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E8%B1%8A%E5%B3%B6%E5%8C%BA%E5%8D%97%E6%B1%A0%E8%A2%8B2-33-6+%E4%BD%90%E8%97%A4%E3%83%93%E3%83%AB%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0"
@@ -340,7 +405,9 @@ export default async function RootLayout({
                       rel="noopener"
                       className="inline-flex items-center gap-1 text-xs text-blue-600 hover:text-blue-800 font-medium"
                     >
-                      <span>Google マップで大きな地図を見る</span>
+                      <span>
+                        {locale === "vi" ? "Xem bản đồ lớn trên Google Maps" : locale === "en" ? "View larger map on Google Maps" : "Google マップで大きな地図を見る"}
+                      </span>
                       <ExternalLink size={12} />
                     </a>
                   </div>

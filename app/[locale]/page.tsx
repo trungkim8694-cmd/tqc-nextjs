@@ -362,7 +362,7 @@ export default function TQCHomepage() {
               <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
                 {t("kigyoulist.desc1")}
                 <a
-                  href="https://kigyoulist.com/ja"
+                  href="https://kigyoulist.com"
                   target="_blank"
                   rel="noopener"
                   className="text-blue-700 font-bold hover:underline mx-1"
@@ -374,7 +374,7 @@ export default function TQCHomepage() {
 
               <div className="flex flex-wrap gap-3 pt-2">
                 <a
-                  href="https://kigyoulist.com/ja"
+                  href="https://kigyoulist.com"
                   target="_blank"
                   rel="noopener"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm shadow-xs transition-colors"
@@ -537,10 +537,18 @@ export default function TQCHomepage() {
             CONSULTATION &amp; INQUIRY
           </span>
           <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
-            不動産・競売投資・B2B調達のご相談はTQCへ
+            {locale === "vi"
+              ? "Tư vấn Bất động sản, Đấu giá & Chuỗi cung ứng B2B cùng Công ty TQC株式会社"
+              : locale === "en"
+              ? "Real Estate, Auction Advisory & B2B Sourcing with TQC Co., Ltd."
+              : "不動産・競売投資・B2B調達のご相談はTQC株式会社へ"}
           </h3>
           <p className="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-            日本での物件探し、裁判所競売入札サポート、日越間での製品調達まで、経験豊富な専門チームが誠心誠意サポートいたします。
+            {locale === "vi"
+              ? "Từ tìm kiếm nhà ở tại Nhật, hỗ trợ đấu giá toà án đến kết nối chuỗi cung ứng sản xuất Nhật-Việt, đội ngũ chuyên gia giàu kinh nghiệm của TQC luôn sẵn sàng đồng hành cùng bạn."
+              : locale === "en"
+              ? "From residential search and court auction bidding support in Japan to cross-border manufacturing supply chains, our experienced team provides comprehensive support."
+              : "日本での物件探し、裁判所競売入札サポート、日越間での製品調達まで、経験豊富な専門チームが誠心誠意サポートいたします。"}
           </p>
 
           <div className="flex flex-wrap justify-center gap-3 pt-2">

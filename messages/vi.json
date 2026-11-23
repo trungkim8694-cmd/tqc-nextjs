@@ -19,7 +19,7 @@
     "heading": "Hồ sơ Doanh nghiệp",
     "subheading": "COMPANY PROFILE",
     "companyName": "Tên công ty",
-    "companyNameVal": "Công ty Cổ phần TQC (TQC Co., Ltd. / 株式会社ＴＱＣ)",
+    "companyNameVal": "Công ty TQC株式会社 (TQC Co., Ltd.)",
     "rep": "Đại diện pháp luật",
     "repVal": "Kurimoto Masayuki (栗本 賢之 - Giám đốc đại diện)",
     "corpNo": "Mã số doanh nghiệp",
@@ -37,7 +37,9 @@
     "license": "Giấy phép hành nghề",
     "licenseVal": "Giấy phép Môi giới Bất động sản: Thống đốc Tokyo (1) Số 107650",
     "hours": "Giờ làm việc",
-    "hoursVal": "9:00 - 18:00 (Nghỉ thứ 4 & Chủ nhật)"
+    "hoursVal": "9:00 - 18:00 (Nghỉ thứ 4 & Chủ nhật)",
+    "business": "Nội dung kinh doanh",
+    "businessVal": "1. Phát triển và vận hành nền tảng Cơ sở dữ liệu doanh nghiệp Nhật Bản Kigyou-list (https://kigyoulist.com), tổng hợp dữ liệu của khoảng 5 triệu pháp nhân trên toàn quốc từ các nguồn mở chính thống (gBizINFO, Hello Work, dữ liệu đăng ký hóa đơn Invoice...), hỗ trợ tìm kiếm B2B, xuất danh sách khách hàng và tự động hóa tiếp cận doanh nghiệp\n2. Môi giới và quản lý bất động sản tại Nhật Bản dành cho người nước ngoài (T-Homes)\n3. Tư vấn, thẩm định pháp lý và hỗ trợ đấu thầu Bất động sản Đấu giá Tòa án & Công trường Nhật Bản (Keibai-Koubai)\n4. Xây dựng và kết nối Chuỗi cung ứng B2B thương mại Việt Nam - Nhật Bản (Aka-pla)"
   },
   "ContactPage": {
     "title": "CONTACT US",
@@ -65,8 +67,8 @@
     "fail": "Gửi yêu cầu không thành công. Vui lòng kiểm tra kết nối mạng hoặc thử lại sau."
   },
   "Homepage": {
-    "metaTitle": "TQC Co., Ltd. | Bất động sản Nhật Bản, Đấu giá Keibai & Chuỗi cung ứng B2B",
-    "metaDesc": "TQC Co., Ltd. là doanh nghiệp cung cấp giải pháp trọn gói: Môi giới BĐS Nhật Bản (T-Homes), Cổng phân tích Đấu giá BĐS (Keibai-Koubai), Cơ sở dữ liệu doanh nghiệp (Kigyoulist) và Chuỗi cung ứng B2B Nhật-Việt (Aka-pla).",
+    "metaTitle": "Công ty TQC株式会社 | Nền tảng dữ liệu danh bạ 5 triệu doanh nghiệp Nhật Bản (Kigyou-list), BĐS & B2B",
+    "metaDesc": "Công ty TQC株式会社 (TQC Co., Ltd.) là đơn vị phát triển và vận hành Nền tảng dữ liệu danh bạ 5 triệu doanh nghiệp Nhật Bản (Kigyou-list), cùng các dịch vụ môi giới BĐS (T-Homes), đấu giá Keibai-Koubai và chuỗi cung ứng B2B Nhật-Việt (Aka-pla).",
     "hero": {
       "slide1Title": "Dịch vụ Bất động sản cho Người Nước Ngoài",
       "slide1Sub": "Hỗ trợ toàn diện từ thuê nhà, mua bán đến quản lý vận hành chuẩn Nhật Bản",
@@ -95,14 +97,14 @@
       "floatingBadge": "REAL ESTATE"
     },
     "kigyoulist": {
-      "badge": "Dữ liệu Doanh nghiệp • Kết nối B2B",
+      "badge": "Danh bạ 5 triệu doanh nghiệp • Cơ sở dữ liệu B2B",
       "title1": "Cơ sở dữ liệu toàn diện",
       "title2": "Nền tảng Doanh nghiệp Nhật Bản",
       "title3": "Tự động trích xuất danh sách khách hàng & Đối tác mục tiêu",
-      "desc1": "TQC Co., Ltd. đồng hành cùng các doanh nghiệp mở rộng thị trường tại Nhật Bản. Nền tảng độc quyền",
-      "desc2": "Kigyoulist (Danh bạ Doanh nghiệp)",
-      "desc3": "giúp bạn phân tích dữ liệu hàng triệu pháp nhân, lọc theo ngành nghề, khu vực và quy mô để tự động tạo danh sách tiếp cận chuẩn xác, thúc đẩy hợp tác B2B thành công nhanh chóng.",
-      "btn1": "Dùng thử Kigyoulist",
+      "desc1": "Công ty TQC株式会社 phát triển và vận hành nền tảng Cơ sở dữ liệu danh bạ 5 triệu doanh nghiệp Nhật Bản \"",
+      "desc2": "Kigyou-list",
+      "desc3": "\" - tổng hợp khoảng 5 triệu pháp nhân toàn quốc từ gBizINFO, Hello Work và Invoice, hỗ trợ tra cứu chuẩn xác, xuất danh sách khách hàng tự động và mở rộng thị trường B2B.",
+      "btn1": "Dùng thử Kigyou-list",
       "floatingBadge": "SYSTEM ONLINE"
     },
     "akapla": {
@@ -128,31 +130,31 @@
     }
   },
   "KigyoulistPage": {
-    "badge": "Kết nối B2B • Nền tảng Dữ liệu Doanh nghiệp",
+    "badge": "Danh bạ 5 triệu doanh nghiệp • Nền tảng Dữ liệu B2B",
     "title1": "Mở rộng Khả năng Kinh doanh",
-    "title2": "Kigyoulist",
-    "desc": "Tận dụng lượng dữ liệu khổng lồ và công nghệ AI, chúng tôi dẫn dắt doanh nghiệp của bạn lên một tầm cao mới, từ phát triển doanh số mới đến tìm kiếm đối tác.",
-    "btn": "Truy cập Trang web Chính thức Kigyoulist",
-    "floatingBadge": "SYSTEM ONLINE",
-    "h2_1": "Kigyoulist là gì?",
-    "p1": "Trong kinh doanh hiện đại, thông tin chất lượng cao là chìa khóa thành công. Được đề xuất mạnh mẽ bởi TQC Co., Ltd.,",
-    "p1_link": "Kigyoulist (Danh sách doanh nghiệp toàn quốc Nhật Bản)",
-    "p1_after": "là một nền tảng sáng tạo quản lý tập trung khối lượng lớn dữ liệu doanh nghiệp tại Nhật Bản và cho phép tìm kiếm, trích xuất tức thì.",
-    "p2": "Nó hoạt động như một công cụ mạnh mẽ để đáp ứng mọi nhu cầu B2B, từ việc tạo danh sách mục tiêu cho các hoạt động bán hàng đến việc khám phá các đối tác kinh doanh mới giữa Nhật Bản và Việt Nam.",
+    "title2": "Kigyou-list (Danh bạ Doanh nghiệp)",
+    "desc": "Được phát triển và vận hành bởi Công ty TQC株式会社, Kigyou-list là Nền tảng dữ liệu danh bạ 5 triệu doanh nghiệp Nhật Bản hàng đầu, tổng hợp từ các nguồn mở chính thống, hỗ trợ tra cứu B2B, xuất danh sách khách hàng và tiếp cận đối tác tự động.",
+    "btn": "Truy cập Website Chính thức Kigyou-list",
+    "floatingBadge": "5 Triệu Doanh Nghiệp",
+    "h2_1": "Kigyou-list là gì?",
+    "p1": "Trong kinh doanh hiện đại, thông tin chất lượng cao là chìa khóa thành công. Được phát triển và vận hành trực tiếp bởi Công ty TQC株式会社 (TQC Co., Ltd.),",
+    "p1_link": "Nền tảng dữ liệu danh bạ doanh nghiệp Nhật Bản Kigyou-list",
+    "p1_after": "tổng hợp dữ liệu của khoảng 5 triệu pháp nhân trên toàn quốc từ các nguồn mở chính thống (gBizINFO của Bộ Kinh tế & Công nghiệp METI, dữ liệu việc làm Hello Work, và hệ thống đăng ký hóa đơn điện tử Invoice của cơ quan thuế Nhật Bản).",
+    "p2": "Nền tảng phục vụ toàn diện mọi nhu cầu B2B: từ tra cứu thông tin doanh nghiệp theo ngành nghề, vốn, quy mô, đến tự động xuất danh sách khách hàng tiềm năng và tối ưu hóa quy trình kết nối đối tác kinh doanh giữa Nhật Bản và quốc tế.",
     "h3": "3 Giá trị Cốt lõi",
-    "v1Title": "Tìm kiếm Doanh nghiệp Độ chính xác cao",
-    "v1Desc": "Thu hẹp ngay lập tức các công ty mục tiêu dựa trên nhiều điều kiện khác nhau như ngành nghề, quy mô và khu vực.",
-    "v2Title": "Tự động tạo Danh sách Bán hàng",
-    "v2Desc": "Tạo danh sách để tiếp cận chỉ bằng một nút bấm. Giảm đáng kể thời gian làm việc của đội ngũ bán hàng.",
-    "v3Title": "Kết nối B2B",
-    "v3Desc": "Chúng tôi hỗ trợ thiết lập chuỗi cung ứng giữa Nhật Bản và Việt Nam, thực hiện các quan hệ đối tác tối ưu.",
-    "h2_2": "Tại sao TQC lại đề xuất Kigyoulist?",
-    "p3": "Trong quá trình phát triển các dịch vụ cốt lõi như \"Xây dựng Chuỗi Cung ứng B2B Nhật-Việt\" và \"Môi giới BĐS & Hỗ trợ Đầu tư Đấu giá\", TQC Co., Ltd. nhận thấy rằng việc tiếp cận đối tác dựa trên dữ liệu chuẩn xác là yếu tố quyết định để tránh rủi ro. Do đó, bằng cách sử dụng Kigyoulist như một",
-    "p3_link": "Nền tảng Kết nối B2B",
-    "p3_after": ", chúng tôi hiện có thể cung cấp các đề xuất có độ chính xác cao và kết nối nhanh chóng cho các công ty khách hàng của mình.",
-    "boxTitle": "Tăng tốc hoạt động kinh doanh của bạn ngay bây giờ",
-    "boxDesc": "Nếu bạn đang tìm kiếm khách hàng mới hoặc đối tác uy tín tại Nhật Bản, hãy trải nghiệm cơ sở dữ liệu mạnh mẽ của Kigyoulist ngay hôm nay.",
-    "boxBtn": "Dùng thử Công cụ Tạo Danh sách Doanh nghiệp"
+    "v1Title": "Tra cứu Doanh nghiệp Chuẩn xác (5 triệu pháp nhân)",
+    "v1Desc": "Thu hẹp ngay lập tức các công ty mục tiêu dựa trên ngành nghề, vốn điều lệ, địa bàn tỉnh thành và tình hình tuyển dụng.",
+    "v2Title": "Tự động Xuất Danh sách Khách hàng CSV",
+    "v2Desc": "Tạo danh sách tiếp cận khách hàng chỉ với 1 cú click, tiết kiệm hơn 90% thời gian nghiên cứu thị trường của đội ngũ kinh doanh.",
+    "v3Title": "Kết nối B2B & Tự động Tiếp cận Đối tác",
+    "v3Desc": "Hỗ trợ thiết lập chuỗi cung ứng thương mại và gửi đề xuất hợp tác tự động, tối ưu hóa tỷ lệ chuyển đổi đối tác.",
+    "h2_2": "Vai trò của Công ty TQC株式会社 đối với Kigyou-list",
+    "p3": "Xuất phát từ nhu cầu thực tiễn trong việc phát triển \"Chuỗi Cung ứng B2B Nhật-Việt\" và \"Môi giới BĐS & Đấu giá\", Công ty TQC株式会社 đã xây dựng và trực tiếp vận hành",
+    "p3_link": "Nền tảng dữ liệu danh bạ doanh nghiệp Nhật Bản Kigyou-list",
+    "p3_after": "nhằm chuẩn hóa dữ liệu doanh nghiệp, loại bỏ rủi ro thông tin và mang đến công cụ tiếp cận thị trường Nhật Bản hiệu quả nhất cho các đối tác.",
+    "boxTitle": "Tăng tốc hoạt động kinh doanh B2B của bạn ngay hôm nay",
+    "boxDesc": "Nếu bạn đang tìm kiếm khách hàng doanh nghiệp hoặc đối tác uy tín tại Nhật Bản, hãy trải nghiệm cơ sở dữ liệu mạnh mẽ của Kigyou-list do Công ty TQC株式会社 cung cấp.",
+    "boxBtn": "Khám phá Nền tảng Kigyou-list"
   },
   "B2BSupplyPage": {
     "badge": "Vietnam - Japan Supply Chain Solution",
@@ -261,15 +263,15 @@
     "ot3Desc": "Bàn tiếp nhận chuyên biệt liên kết cùng các trường học và nghiệp đoàn hỗ trợ tân du học sinh, kỹ sư mới sang Nhật."
   },
   "SEO": {
-    "title": "TQC Co., Ltd. | Bất động sản Nhật Bản, Đấu giá Keibai & Chuỗi cung ứng B2B",
-    "description": "TQC Co., Ltd. cung cấp môi giới bất động sản cho người nước ngoài tại Nhật Bản (T-Homes), Cổng phân tích Đấu giá BĐS (Keibai-Koubai), Cơ sở dữ liệu doanh nghiệp (Kigyoulist) và Chuỗi cung ứng B2B (Aka-pla).",
-    "b2bTitle": "Chuỗi Cung Ứng B2B Aka-pla | TQC Co., Ltd.",
+    "title": "Công ty TQC株式会社 | Nền tảng dữ liệu danh bạ 5 triệu doanh nghiệp Nhật Bản (Kigyou-list), BĐS & B2B",
+    "description": "Công ty TQC株式会社 (TQC Co., Ltd.) là đơn vị phát triển và vận hành Nền tảng dữ liệu danh bạ 5 triệu doanh nghiệp Nhật Bản (Kigyou-list), cùng các dịch vụ môi giới BĐS (T-Homes), đấu giá Keibai-Koubai và chuỗi cung ứng B2B Nhật-Việt (Aka-pla).",
+    "b2bTitle": "Chuỗi Cung Ứng B2B Aka-pla | Công ty TQC株式会社",
     "b2bDesc": "Nền tảng thương mại và thu mua B2B trực tiếp với các nhà sản xuất xuất sắc tại Việt Nam.",
-    "kigyoulistTitle": "Kigyoulist (Dữ Liệu Doanh Nghiệp) | TQC Co., Ltd.",
-    "kigyoulistDesc": "Nền tảng Dữ liệu Doanh nghiệp và Kết nối B2B toàn quốc Nhật Bản.",
-    "keibaiTitle": "Cổng Đấu Giá Bất Động Sản Keibai-Koubai | TQC Co., Ltd.",
+    "kigyoulistTitle": "Nền Tảng Dữ Liệu 5 Triệu Doanh Nghiệp Nhật Bản Kigyou-list | Công ty TQC株式会社",
+    "kigyoulistDesc": "Nền tảng dữ liệu danh bạ 5 triệu doanh nghiệp Nhật Bản Kigyou-list do Công ty TQC株式会社 phát triển và vận hành. Tự động hóa trích xuất danh sách khách hàng và kết nối B2B.",
+    "keibaiTitle": "Cổng Đấu Giá Bất Động Sản Keibai-Koubai | Công ty TQC株式会社",
     "keibaiDesc": "Đầu tư bất động sản an toàn và bảo mật với dữ liệu đấu giá tòa án và cơ quan thuế Nhật Bản.",
-    "thomesTitle": "Bất Động Sản T-HOMES | TQC Co., Ltd.",
+    "thomesTitle": "Bất Động Sản T-HOMES | Công ty TQC株式会社",
     "thomesDesc": "Dịch vụ thuê, mua bán và quản lý nhà đất Nhật Bản cho người nước ngoài với chính sách ưu tiên cư dân."
   }
 }
